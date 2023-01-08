@@ -1,3 +1,20 @@
+@import url("/assets/css/animate.css");
+@import url("/assets/css/bootstrap.min.css");
+@import url("/assets/css/all.min.css");
+@import url("/assets/css/icofont.min.css");
+@import url("/assets/css/lightcase.css");
+@import url("/assets/css/swiper.min.css");
+@import url("/assets/css/style.css");
+
+/**
+   <link rel="stylesheet" href="../assets/css/animate.css" />
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../assets/css/all.min.css" />
+        <link rel="stylesheet" href="../assets/css/icofont.min.css" />
+        <link rel="stylesheet" href="../assets/css/lightcase.css" />
+        <link rel="stylesheet" href="../assets/css/swiper.min.css" />
+        <link rel="stylesheet" href="../assets/css/style.css" />
+*/
 html,
 body {
   padding: 0;
@@ -16,11 +33,7 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+  html {}
+
+  body {}
 }
