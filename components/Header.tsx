@@ -1,6 +1,13 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import LoginDialog from "./dialogs/LoginDialog";
 const Header: React.FC<any> = () => {
+  const [showLogin, setShowLogin] = useState(false);
+
+  const showLoginDialog = () => setShowLogin(true);
+
+  const handleCloseLoginDialog = () => setShowLogin(false);
+
   return (
     <>
       <div className="search-input">
@@ -182,13 +189,15 @@ const Header: React.FC<any> = () => {
                         <a href="/contact">Contact</a>
                       </li>
                     </ul>
-                    <ul className="lab-ul search-cart">
+                    <ul className="lab-ul ml-auto">
                       <li>
                         <a>Sign Up</a>
                       </li>
                       <li>
-                        <a>Login</a>
+                        <a onClick={showLoginDialog}>Login</a>
                       </li>
+                    </ul>
+                    <ul className="lab-ul search-cart">
                       <li>
                         <div className="cart-option">
                           <i className="icofont-cart-alt"></i>
@@ -257,6 +266,9 @@ const Header: React.FC<any> = () => {
           </div>
         </div>
       </header>
+
+      {/* Dialogs */}
+      <LoginDialog show={showLogin} handleClose={handleCloseLoginDialog} />
     </>
   );
 };
