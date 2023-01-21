@@ -1,12 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useAuth } from "../contexts/auth.context";
 import LoginDialog from "./dialogs/LoginDialog";
+import SignupDialog from "./dialogs/SignupDialog";
 const Header: React.FC<any> = () => {
+  const { signOut, loading, authUser } = useAuth()
+  const router = useRouter();
+
   const [showLogin, setShowLogin] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(false);
 
   const showLoginDialog = () => setShowLogin(true);
+  const showSignUpDialog = () => setShowSignUp(true);
 
   const handleCloseLoginDialog = () => setShowLogin(false);
+  const handleCloseSignupDialog = () => setShowSignUp(false);
+
+  const logout = async () => {
+    await signOut();
+    router.push(
+      "/"
+    )
+  }
 
   return (
     <>
@@ -189,14 +206,24 @@ const Header: React.FC<any> = () => {
                         <a href="/contact">Contact</a>
                       </li>
                     </ul>
-                    <ul className="lab-ul ml-auto">
+                    {!authUser && (<ul className="lab-ul ml-auto">
                       <li>
-                        <a>Sign Up</a>
+                        <a onClick={showSignUpDialog}>Sign Up</a>
                       </li>
                       <li>
                         <a onClick={showLoginDialog}>Login</a>
                       </li>
-                    </ul>
+                    </ul>)}
+                    {authUser && (<ul className="lab-ul ml-auto">
+                      <li>
+                        <Link legacyBehavior href="/profile">
+                        <a>My profile</a>
+                        </Link>
+                      </li>
+                      <li>
+                        <a onClick={logout}>Logout</a>
+                      </li>
+                    </ul>)}
                     <ul className="lab-ul search-cart">
                       <li>
                         <div className="cart-option">
@@ -269,6 +296,7 @@ const Header: React.FC<any> = () => {
 
       {/* Dialogs */}
       <LoginDialog show={showLogin} handleClose={handleCloseLoginDialog} />
+      <SignupDialog show={showSignUp} handleClose={handleCloseSignupDialog} />
     </>
   );
 };

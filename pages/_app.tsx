@@ -1,10 +1,12 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import { AuthUserProvider } from "../contexts/auth.context";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <AuthUserProvider>
+      <div>
       <Script
         src="/assets/js/jquery.js"
         onLoad={() => console.log("jQuery loaded")}
@@ -48,5 +50,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <Component {...pageProps} />
     </div>
+    </AuthUserProvider>
   );
 }

@@ -1,5 +1,7 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
+import { useAuth } from "../../contexts/auth.context";
 import DialogModal from "../DialogModal";
 
 interface LoginDialogProp {
@@ -14,17 +16,23 @@ const LoginDialog: React.FC<LoginDialogProp> = ({
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string>('')
+  const { signInWithCustomEmailAndPassword } = useAuth()
+  const router = useRouter()
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log("call login api");
     setLoading(true);
-    console.log({
-      email,
-      password,
-    });
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    if(email === "" || password === "") {
+      setError("Some fields are required ")
+      setLoading(false)
+     return;
+    }
+    setError("")
+    await signInWithCustomEmailAndPassword(email, password);
+    handleClose();
+    setLoading(false)
+    router.push("/")
   };
 
   return (
@@ -33,6 +41,7 @@ const LoginDialog: React.FC<LoginDialogProp> = ({
         <Modal.Title>Sign In into your account</Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        {error && <div className="alert alert-danger">{error}</div>}
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>
