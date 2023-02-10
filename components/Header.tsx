@@ -1,28 +1,26 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { useAuth } from "../contexts/auth.context";
-import LoginDialog from "./dialogs/LoginDialog";
-import SignupDialog from "./dialogs/SignupDialog";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import { useAuth } from '../contexts/auth.context'
+import LoginDialog from './dialogs/LoginDialog'
+import SignupDialog from './dialogs/SignupDialog'
 const Header: React.FC<any> = () => {
   const { signOut, loading, authUser } = useAuth()
-  const router = useRouter();
+  const router = useRouter()
 
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false)
 
-  const showLoginDialog = () => setShowLogin(true);
-  const showSignUpDialog = () => setShowSignUp(true);
+  const showLoginDialog = () => setShowLogin(true)
+  const showSignUpDialog = () => setShowSignUp(true)
 
-  const handleCloseLoginDialog = () => setShowLogin(false);
-  const handleCloseSignupDialog = () => setShowSignUp(false);
+  const handleCloseLoginDialog = () => setShowLogin(false)
+  const handleCloseSignupDialog = () => setShowSignUp(false)
 
   const logout = async () => {
-    await signOut();
-    router.push(
-      "/"
-    )
+    await signOut()
+    router.push('/')
   }
 
   return (
@@ -70,47 +68,28 @@ const Header: React.FC<any> = () => {
                   <a href="/about">About</a>
                 </li>
                 <li>
-                  <a href="#0">Pages</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="team.html">Team Membar</a>
-                    </li>
-                    <li>
-                      <a href="faq-page.html">Faq Page</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404 Page</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#0">Blog</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="blog-single.html">Blog Details</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#0">Shop</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="product-page.html">Products Page</a>
-                    </li>
-                    <li>
-                      <a href="product-single.html">Products Details</a>
-                    </li>
-                    <li>
-                      <a href="cart-page.html">Cart Page</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
                   <a href="/contact">Contact</a>
                 </li>
+                {authUser && (
+                  <li>
+                    <a href="/user">My Profile</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li>
+                    <a href="/user/orders">Orders</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li>
+                    <a href="/user/transactions">Transactions</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li onClick={logout}>
+                    <a href="#">Logout</a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
@@ -128,7 +107,7 @@ const Header: React.FC<any> = () => {
                     <img
                       src="/assets/jobie-agro-logo.png"
                       alt="logo"
-                      style={{ width: "250px" }}
+                      style={{ width: '250px' }}
                     />
                   </a>
                 </div>
@@ -186,7 +165,7 @@ const Header: React.FC<any> = () => {
                         <img
                           src="/assets/jobie-agro-logo.png"
                           alt="logo"
-                          style={{ width: "250px" }}
+                          style={{ width: '250px' }}
                         />
                       </a>
                     </div>
@@ -199,31 +178,37 @@ const Header: React.FC<any> = () => {
                       </li>
 
                       <li>
-                        <a href="#0">Shop</a>
+                        <Link  href="/shop" legacyBehavior>
+                        <a>Shop</a>
+                        </Link>
                       </li>
 
                       <li>
                         <a href="/contact">Contact</a>
                       </li>
                     </ul>
-                    {!authUser && (<ul className="lab-ul ml-auto">
-                      <li>
-                        <a onClick={showSignUpDialog}>Sign Up</a>
-                      </li>
-                      <li>
-                        <a onClick={showLoginDialog}>Login</a>
-                      </li>
-                    </ul>)}
-                    {authUser && (<ul className="lab-ul ml-auto">
-                      <li>
-                        <Link legacyBehavior href="/profile">
-                        <a>My profile</a>
-                        </Link>
-                      </li>
-                      <li>
-                        <a onClick={logout}>Logout</a>
-                      </li>
-                    </ul>)}
+                    {!authUser && (
+                      <ul className="lab-ul ml-auto">
+                        <li>
+                          <a onClick={showSignUpDialog}>Sign Up</a>
+                        </li>
+                        <li>
+                          <a onClick={showLoginDialog}>Login</a>
+                        </li>
+                      </ul>
+                    )}
+                    {authUser && (
+                      <ul className="lab-ul ml-auto">
+                        <li>
+                          <Link legacyBehavior href="/user">
+                            <a>My profile</a>
+                          </Link>
+                        </li>
+                        <li>
+                          <a onClick={logout}>Logout</a>
+                        </li>
+                      </ul>
+                    )}
                     <ul className="lab-ul search-cart">
                       <li>
                         <div className="cart-option">
@@ -298,7 +283,7 @@ const Header: React.FC<any> = () => {
       <LoginDialog show={showLogin} handleClose={handleCloseLoginDialog} />
       <SignupDialog show={showSignUp} handleClose={handleCloseSignupDialog} />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

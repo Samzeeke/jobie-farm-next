@@ -29,10 +29,17 @@ const LoginDialog: React.FC<LoginDialogProp> = ({
      return;
     }
     setError("")
+   try{
     await signInWithCustomEmailAndPassword(email, password);
     handleClose();
     setLoading(false)
     router.push("/")
+   }catch(error: any) {
+    window.alert(error.message)
+   }finally{
+    setLoading(false)
+    setError("")
+   }
   };
 
   return (
@@ -65,7 +72,7 @@ const LoginDialog: React.FC<LoginDialogProp> = ({
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" onClick={handleLogin}>
+        <Button className="text-white bg-orange-500 hover:bg-orange-700 outline-none cursor-pointer " onClick={handleLogin}>
           {loading ? "Please wait..." : "Login"}
         </Button>
       </Modal.Footer>
