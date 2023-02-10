@@ -1,93 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  products: [
-    {
-      id: 1,
-      title: "Light Brown Eggs",
-      image: "/assets/images/products/product/01.png",
-      price: 39.99,
-    },
-    {
-      id: 2,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/02.png",
-      price: 39.99,
-    },
-    {
-      id: 3,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/03.png",
-      price: 39.99,
-    },
-    {
-      id: 4,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-    {
-      id: 8,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/05.png",
-      price: 39.99,
-    },
-    {
-      id: 5,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/06.png",
-      price: 39.99,
-    },
-    {
-      id: 6,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-    {
-      id: 7,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-    {
-      id: 8,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-    {
-      id: 9,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-    {
-      id: 10,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/04.png",
-      price: 39.99,
-    },
-
-    {
-      id: 11,
-      title: "Light Brown Eggs",
-      image: "/assets/images/products/product/01.png",
-      price: 39.99,
-    },
-    {
-      id: 12,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/02.png",
-      price: 39.99,
-    },
-    {
-      id: 13,
-      title: "Little Chicken Broiler",
-      image: "/assets/images/products/product/03.png",
-      price: 39.99,
-    },
-  ],
+  products: [],
   carts: [],
   totalAmount: 0,
   totalQuantity: 0,
@@ -99,7 +13,7 @@ const ProductsSlice = createSlice({
   initialState: initialState,
   reducers: {
     addProducts(state, action) {
-      state.products = action.payload;
+      state.products = action.payload.products;
     },
     addCartItem(state, action) {
       // Showing notification for added item
@@ -129,7 +43,7 @@ const ProductsSlice = createSlice({
     },
     removeCartItem(state, action) {
       const { id } = action.payload;
-      const existingItem = state.carts.find((item) => item.id === +id);
+      const existingItem = state.carts.find((item) => item.id === id);
       const updatedAmount = +state.totalAmount - +existingItem.price;
       state.totalAmount = updatedAmount.toFixed(2);
       if (existingItem.quantity === 1) {

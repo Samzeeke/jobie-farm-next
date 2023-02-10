@@ -5,7 +5,7 @@ import { ProductsActions } from "../../store/Products/ProductsSlice";
 import classes from "../../styles/Cart.module.css";
 const ProductsItem = ({ id, title, image, price }) => {
   const dispatch = useDispatch();
-  const addCartItem = () => {
+  const addCartItem = async () => {
     dispatch(
       ProductsActions.addCartItem({
         id,
@@ -16,6 +16,7 @@ const ProductsItem = ({ id, title, image, price }) => {
       })
     );
   };
+
   return (
     <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
       <div className="product-item-2">
