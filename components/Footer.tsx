@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import React from "react";
 const Footer: React.FC<any> = () => {
   return (
@@ -18,10 +20,18 @@ const Footer: React.FC<any> = () => {
                     Conveniently customizec web services aggregate frictionle
                     internet withouevs Conveniently customizec.
                   </p>
+                  <br />
                   <p>
-                    Enthusiastically scale synergistic technologies for
-                    leveraged with technology quickly.
+                    <span className="d-block text-bold">FOR BANK TRANSFERS</span>
+                    <span className="d-block text-md">Access Bank</span>
+                    <span className="d-block text-md">Jobie Agro Farm limited </span>
+                    <span className="d-block text-md">Account: 0088833445</span>
                   </p>
+                  <br />
+                  <div className="d-flex">
+                  <Image src={"/paystack.png"} alt="paystack" width={100} height={80} />
+                  <Image src={"/flutterwave.png"} alt="flutterwave" width={100} height={80} />
+                  </div>
                 </div>
               </div>
               <div className="col-xl-3 col-md-6">
@@ -35,8 +45,7 @@ const Footer: React.FC<any> = () => {
                         <i className="icofont-phone"></i>
                       </div>
                       <div className="content-part">
-                        <p>+88130-589-745-6987</p>
-                        <p>+1655-456-523</p>
+                        <p>+234(0)7088479448</p>
                       </div>
                     </li>
                     <li>
@@ -53,9 +62,9 @@ const Footer: React.FC<any> = () => {
                         <i className="icofont-location-pin"></i>
                       </div>
                       <div className="content-part">
-                        <p>
-                          25/2 Lane2 Vokte Street Building <br />
-                          Melborn City
+                        <p>4 Oriokuku Street, 
+                       <br />
+                          Glass industry road Aba Abia state. 
                         </p>
                       </div>
                     </li>

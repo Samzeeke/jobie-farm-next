@@ -1,11 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Preloader from "../components/Preloader";
-import styles from "../styles/Home.module.css";
+import Products from "../components/Products/Products";
+// import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div>
       <main>
@@ -108,11 +111,18 @@ export default function Home() {
                   <div className="about-item">
                     <div className="about-inner">
                       <div className="about-thumb">
-                        <img src="/assets/images/about/05.jpg" alt="about" />
+                        <Image
+                          width={100}
+                          height={100}
+                          src="/assets/images/about/05.jpg"
+                          alt="about"
+                        />
                       </div>
                       <div className="about-content">
                         <div className="ac-thumb">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             src="/assets/images/about/icon/01.png"
                             alt="about Image"
                           />
@@ -127,11 +137,18 @@ export default function Home() {
                   <div className="about-item">
                     <div className="about-inner">
                       <div className="about-thumb">
-                        <img src="assets/images/about/06.jpg" alt="about" />
+                        <Image
+                          width={100}
+                          height={100}
+                          src="/assets/images/about/06.jpg"
+                          alt="about"
+                        />
                       </div>
                       <div className="about-content">
                         <div className="ac-thumb">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             src="/assets/images/about/icon/02.png"
                             alt="about Image"
                           />
@@ -146,11 +163,18 @@ export default function Home() {
                   <div className="about-item">
                     <div className="about-inner">
                       <div className="about-thumb">
-                        <img src="/assets/images/about/07.jpg" alt="about" />
+                        <Image
+                          width={100}
+                          height={100}
+                          src="/assets/images/about/07.jpg"
+                          alt="about"
+                        />
                       </div>
                       <div className="about-content">
                         <div className="ac-thumb">
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             src="/assets/images/about/icon/03.png"
                             alt="about Image"
                           />
@@ -218,7 +242,9 @@ export default function Home() {
                 <div className="lab-item">
                   <div className="lab-inner">
                     <div className="lab-thumb">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         src="/assets/images/feature/05.png"
                         alt="Feature Image"
                       />
@@ -236,7 +262,9 @@ export default function Home() {
                 <div className="lab-item">
                   <div className="lab-inner">
                     <div className="lab-thumb">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         src="/assets/images/feature/06.png"
                         alt="Feature image"
                       />
@@ -254,7 +282,9 @@ export default function Home() {
                 <div className="lab-item">
                   <div className="lab-inner">
                     <div className="lab-thumb">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         src="/assets/images/feature/07.png"
                         alt="Feature image"
                       />
@@ -272,7 +302,9 @@ export default function Home() {
                 <div className="lab-item">
                   <div className="lab-inner">
                     <div className="lab-thumb">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         src="/assets/images/feature/08.png"
                         alt="Feature image"
                       />
@@ -303,261 +335,19 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="col-12">
-                <div className="section-wrapper">
-                  <div className="row justify-content-center mb-15-none">
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/01.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>LIght Brown Eggs</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/02.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>Little Chicken Broiler</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/03.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>White Brown Eggs</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/04.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>Chicken Broiler</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/05.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>Fresh Chicken</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/06.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>Raw Chicken Broiler</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/01.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>White Brown Eggs</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-xl-3 col-lg-4 col-sm-6 col-12">
-                      <div className="product-item-2">
-                        <div className="product-inner">
-                          <div className="product-thumb">
-                            <img
-                              src="/assets/images/products/product/02.png"
-                              alt="product"
-                            />
-                          </div>
-                          <div className="product-content">
-                            <a href="#">
-                              <h6>Little Chicken Broiler</h6>
-                            </a>
-                            <div className="rating">
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                              <i className="far fa-star"></i>
-                            </div>
-                            <h6 className="price">$39.99</h6>
-                            <div className="cart-option">
-                              <a href="#" className="lab-btn">
-                                <span>Add To Cart</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="text-center mt-3 mb-2">
-              <a href="#" className="lab-btn">
-                <span>Shop Now</span>
-              </a>
+              <Products start={0} end={8} />
+              <Button
+                link={false}
+                to="#"
+                className="text-center mt-3 mb-2 lab-btn"
+                onClick={() => router.push("/shop")}
+              >
+                Shop now
+              </Button>
             </div>
           </div>
         </section>
-        {/* PRoducts */}
+        {/* Products */}
         {/* Poultry farm service */}
         <section className="service-section padding-tb">
           <div className="container">
@@ -579,7 +369,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/01.png"
                                 alt="service image"
                               />
@@ -605,7 +397,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/02.png"
                                 alt="service image"
                               />
@@ -631,7 +425,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/03.png"
                                 alt="service image"
                               />
@@ -657,7 +453,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/04.png"
                                 alt="service image"
                               />
@@ -683,7 +481,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/05.png"
                                 alt="service image"
                               />
@@ -709,7 +509,9 @@ export default function Home() {
                         <div className="lab-inner p-4 mb-4 text-left">
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
-                              <img
+                              <Image
+                                width={100}
+                                height={100}
                                 src="/assets/images/service/06.png"
                                 alt="service image"
                               />
@@ -758,7 +560,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/01.jpg"
                         alt="gallery-image"
                       />
@@ -768,7 +572,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/02.jpg"
                         alt="gallery-image"
                       />
@@ -778,7 +584,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/03.jpg"
                         alt="gallery-image"
                       />
@@ -788,7 +596,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/04.jpg"
                         alt="gallery-image"
                       />
@@ -798,7 +608,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/05.jpg"
                         alt="gallery-image"
                       />
@@ -808,7 +620,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/06.jpg"
                         alt="gallery-image"
                       />
@@ -818,7 +632,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/07.jpg"
                         alt="gallery-image"
                       />
@@ -828,7 +644,9 @@ export default function Home() {
                       data-rel="lightcase:myCollection:slideshow"
                       className="grid-image"
                     >
-                      <img
+                      <Image
+                        width={250}
+                        height={100}
                         src="/assets/images/gallery/08.jpg"
                         alt="gallery-image"
                       />
@@ -866,7 +684,9 @@ export default function Home() {
                         <div className="lab-inner">
                           <div className="testi-top">
                             <div className="testi-t-thumb">
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 src="/assets/images/testimonial/01.jpg"
                                 alt="author-image"
                               />
@@ -907,7 +727,9 @@ export default function Home() {
                           </div>
                           <div className="testi-bottom">
                             <p>
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q1"
                                 src="/assets/images/testimonial/q1.png"
                                 alt=""
@@ -916,7 +738,9 @@ export default function Home() {
                               Professionally monetizeturkeyf Testingdu
                               Frofessionally oe-enablfunctaizede-come rce
                               Onceptualize Technically initiatives.
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q2"
                                 src="/assets/images/testimonial/q2.png"
                                 alt='"'
@@ -931,7 +755,9 @@ export default function Home() {
                         <div className="lab-inner">
                           <div className="testi-top">
                             <div className="testi-t-thumb">
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 src="/assets/images/testimonial/02.jpg"
                                 alt="author-image"
                               />
@@ -972,7 +798,9 @@ export default function Home() {
                           </div>
                           <div className="testi-bottom">
                             <p>
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q1"
                                 src="/assets/images/testimonial/q1.png"
                                 alt='"'
@@ -981,7 +809,9 @@ export default function Home() {
                               Professionally monetizeturkeyf Testingdu
                               Frofessionally oe-enablfunctaizede-come rce
                               Onceptualize Technically initiatives.
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q2"
                                 src="/assets/images/testimonial/q2.png"
                                 alt='"'
@@ -996,7 +826,9 @@ export default function Home() {
                         <div className="lab-inner">
                           <div className="testi-top">
                             <div className="testi-t-thumb">
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 src="/assets/images/testimonial/03.jpg"
                                 alt="author-image"
                               />
@@ -1037,7 +869,9 @@ export default function Home() {
                           </div>
                           <div className="testi-bottom">
                             <p>
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q1"
                                 src="/assets/images/testimonial/q1.png"
                                 alt='"'
@@ -1046,7 +880,9 @@ export default function Home() {
                               Professionally monetizeturkeyf Testingdu
                               Frofessionally oe-enablfunctaizede-come rce
                               Onceptualize Technically initiatives.
-                              <img
+                              <Image
+                                width={80}
+                                height={50}
                                 className="q2"
                                 src="/assets/images/testimonial/q2.png"
                                 alt='"'
@@ -1068,12 +904,19 @@ export default function Home() {
           <div className="container">
             <div className="video-section-wrapper mb-15">
               <div className="video-content">
-                <img
+                <Image
+                  width={2500}
+                  height={1000}
                   src="/assets/images/bg-images/video-bg.jpg"
                   alt="Video-background"
                 />
                 <a href="https://youtu.be/cvOx1uC1-oA" data-rel="lightcase">
-                  <img src="/assets/images/bg-images/yt-icon.png" alt="Play" />
+                  <Image
+                    width={70}
+                    height={50}
+                    src="/assets/images/bg-images/yt-icon.png"
+                    alt="Play"
+                  />
                 </a>
               </div>
             </div>
@@ -1090,7 +933,9 @@ export default function Home() {
                     <div className="sponsor-item">
                       <div className="sponsor-thumb">
                         <a href="#">
-                          <img
+                          <Image
+                            width={150}
+                            height={100}
                             src="/assets/images/sponsor/01.png"
                             alt="sponsor"
                           />
@@ -1102,7 +947,9 @@ export default function Home() {
                     <div className="sponsor-item">
                       <div className="sponsor-thumb">
                         <a href="#">
-                          <img
+                          <Image
+                            width={250}
+                            height={100}
                             src="/assets/images/sponsor/02.png"
                             alt="sponsor"
                           />
@@ -1114,7 +961,9 @@ export default function Home() {
                     <div className="sponsor-item">
                       <div className="sponsor-thumb">
                         <a href="#">
-                          <img
+                          <Image
+                            width={250}
+                            height={100}
                             src="/assets/images/sponsor/03.png"
                             alt="sponsor"
                           />
@@ -1126,7 +975,9 @@ export default function Home() {
                     <div className="sponsor-item">
                       <div className="sponsor-thumb">
                         <a href="#">
-                          <img
+                          <Image
+                            width={250}
+                            height={100}
                             src="/assets/images/sponsor/04.png"
                             alt="sponsor"
                           />
@@ -1138,7 +989,9 @@ export default function Home() {
                     <div className="sponsor-item">
                       <div className="sponsor-thumb">
                         <a href="#">
-                          <img
+                          <Image
+                            width={250}
+                            height={100}
                             src="/assets/images/sponsor/05.png"
                             alt="sponsor"
                           />

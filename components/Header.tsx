@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
-import { useAuth } from '../contexts/auth.context'
-import LoginDialog from './dialogs/LoginDialog'
-import SignupDialog from './dialogs/SignupDialog'
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useAuth } from "../contexts/auth.context";
+import LoginDialog from "./dialogs/LoginDialog";
+import SignupDialog from "./dialogs/SignupDialog";
 const Header: React.FC<any> = () => {
   const { signOut, loading, authUser } = useAuth()
   const router = useRouter()
@@ -62,10 +62,10 @@ const Header: React.FC<any> = () => {
             <div className="mobile-menu-area-inner">
               <ul className="lab-ul">
                 <li className="active">
-                  <a href="/">Home</a>
+                  <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/about">About</a>
+                  <Link href="/about">About</Link>
                 </li>
                 <li>
                   <a href="/contact">Contact</a>
@@ -103,13 +103,15 @@ const Header: React.FC<any> = () => {
             <div className="row justify-content-center align-items-center">
               <div className="col-lg-3 col-12">
                 <div className="logo py-2">
-                  <a href="/">
-                    <img
+                  <Link href="/">
+                    <Image
+                      width={250}
+                      height={100}
                       src="/assets/jobie-agro-logo.png"
                       alt="logo"
                       style={{ width: '250px' }}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-lg-9 col-12">
@@ -117,18 +119,28 @@ const Header: React.FC<any> = () => {
                   <ul className="lab-ul d-flex flex-wrap justify-content-end">
                     <li className="d-flex flex-wrap align-items-center">
                       <div className="ht-add-thumb mr-2">
-                        <img src="/assets/images/header/01.png" alt="address" />
+                        <Image
+                          width={30}
+                          height={30}
+                          src="/assets/images/header/01.png"
+                          alt="address"
+                        />
                       </div>
                       <div className="ht-add-content">
-                        <span>72AH, Victoria,</span>
+                        <span>4 Oriokuku Street,</span>
                         <span className="d-block text-bold">
-                          Collins Street West USA
+                        Glass industry road Aba Abia state.
                         </span>
                       </div>
                     </li>
                     <li className="d-flex flex-wrap align-items-center">
                       <div className="ht-add-thumb mr-2">
-                        <img src="/assets/images/header/02.png" alt="email" />
+                        <Image
+                          width={30}
+                          height={30}
+                          src="/assets/images/header/02.png"
+                          alt="email"
+                        />
                       </div>
                       <div className="ht-add-content">
                         <span>Send Mail </span>
@@ -139,12 +151,17 @@ const Header: React.FC<any> = () => {
                     </li>
                     <li className="d-flex flex-wrap align-items-center">
                       <div className="ht-add-thumb mr-2">
-                        <img src="/assets/images/header/03.png" alt="call" />
+                        <Image
+                          width={30}
+                          height={30}
+                          src="/assets/images/header/03.png"
+                          alt="call"
+                        />
                       </div>
                       <div className="ht-add-content">
                         <span>Make Call </span>
                         <span className="d-block text-bold">
-                          +88-6487-5962-563
+                          +234(0)7088479448
                         </span>
                       </div>
                     </li>
@@ -161,20 +178,22 @@ const Header: React.FC<any> = () => {
                 <div className="main-area w-100">
                   <div className="main-menu d-flex flex-wrap align-items-center justify-content-between w-100">
                     <div className="logo">
-                      <a href="index.html">
-                        <img
+                      <Link href="index.html">
+                        <Image
+                          width={250}
+                          height={250}
                           src="/assets/jobie-agro-logo.png"
                           alt="logo"
                           style={{ width: '250px' }}
                         />
-                      </a>
+                      </Link>
                     </div>
                     <ul className="lab-ul">
                       <li className="active">
-                        <a href="/">Home</a>
+                        <Link href="/">Home</Link>
                       </li>
                       <li>
-                        <a href="/about">About</a>
+                        <Link href="/about">About</Link>
                       </li>
 
                       <li>
@@ -184,7 +203,7 @@ const Header: React.FC<any> = () => {
                       </li>
 
                       <li>
-                        <a href="/contact">Contact</a>
+                        <Link href="/contact">Contact</Link>
                       </li>
                     </ul>
                     {!authUser && (
