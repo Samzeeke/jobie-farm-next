@@ -178,7 +178,7 @@ const Header: React.FC<any> = () => {
                 <div className="main-area w-100">
                   <div className="main-menu d-flex flex-wrap align-items-center justify-content-between w-100">
                     <div className="logo">
-                      <Link href="index.html">
+                      <Link href="/">
                         <Image
                           width={250}
                           height={250}

@@ -1,14 +1,31 @@
-import Head from "next/head";
-import Image from "next/image";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebase";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Products from "../components/Products/Products";
+import { ProductsActions } from "../store/Products/ProductsSlice";
 // import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const dispatch = useDispatch();
   const router = useRouter();
+  useEffect(() => {
+    (async () => {
+      const colRef = collection(db, "products");
+      const snapshots = await getDocs(colRef);
+      const docs = snapshots.docs.map((doc) => {
+        const data = doc.data();
+        data.id = doc.id;
+        return data;
+      });
+      dispatch(ProductsActions.addProducts({ products: docs }));
+    })();
+  }, [dispatch]);
   return (
     <div>
       <main>
@@ -370,8 +387,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/01.png"
                                 alt="service image"
                               />
@@ -398,8 +415,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/02.png"
                                 alt="service image"
                               />
@@ -426,8 +443,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/03.png"
                                 alt="service image"
                               />
@@ -454,8 +471,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/04.png"
                                 alt="service image"
                               />
@@ -482,8 +499,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/05.png"
                                 alt="service image"
                               />
@@ -510,8 +527,8 @@ export default function Home() {
                           <div className="service-top d-flex align-items-center mb-4">
                             <div className="st-thumb mr-3">
                               <Image
-                                width={100}
-                                height={100}
+                                width={70}
+                                height={70}
                                 src="/assets/images/service/06.png"
                                 alt="service image"
                               />
