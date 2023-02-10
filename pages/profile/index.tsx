@@ -11,6 +11,9 @@ export default function Profile() {
         {loading ? <p>Loading...</p> : <div>
            <pre>{JSON.stringify(authUser, null, 2)}</pre>
             </div>}
+            <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
         <Footer />
     </>
 }

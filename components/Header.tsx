@@ -5,24 +5,23 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/auth.context";
 import LoginDialog from "./dialogs/LoginDialog";
 import SignupDialog from "./dialogs/SignupDialog";
-import Carts from "./Carts/Carts";
 const Header: React.FC<any> = () => {
-  const { signOut, loading, authUser } = useAuth();
-  const router = useRouter();
+  const { signOut, loading, authUser } = useAuth()
+  const router = useRouter()
 
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false)
 
-  const showLoginDialog = () => setShowLogin(true);
-  const showSignUpDialog = () => setShowSignUp(true);
+  const showLoginDialog = () => setShowLogin(true)
+  const showSignUpDialog = () => setShowSignUp(true)
 
-  const handleCloseLoginDialog = () => setShowLogin(false);
-  const handleCloseSignupDialog = () => setShowSignUp(false);
+  const handleCloseLoginDialog = () => setShowLogin(false)
+  const handleCloseSignupDialog = () => setShowSignUp(false)
 
   const logout = async () => {
-    await signOut();
-    router.push("/");
-  };
+    await signOut()
+    router.push('/')
+  }
 
   return (
     <>
@@ -69,47 +68,28 @@ const Header: React.FC<any> = () => {
                   <Link href="/about">About</Link>
                 </li>
                 <li>
-                  <a href="#0">Pages</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="team.html">Team Membar</a>
-                    </li>
-                    <li>
-                      <a href="faq-page.html">Faq Page</a>
-                    </li>
-                    <li>
-                      <a href="404.html">404 Page</a>
-                    </li>
-                  </ul>
+                  <a href="/contact">Contact</a>
                 </li>
-                <li>
-                  <a href="#0">Blog</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                      <a href="blog-single.html">Blog Details</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#0">Shop</a>
-                  <ul className="lab-ul">
-                    <li>
-                      <a href="product-page.html">Products Page</a>
-                    </li>
-                    <li>
-                      <a href="product-single.html">Products Details</a>
-                    </li>
-                    <li>
-                      <a href="cart-page.html">Cart Page</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href="/contact">Contact</Link>
-                </li>
+                {authUser && (
+                  <li>
+                    <a href="/user">My Profile</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li>
+                    <a href="/user/orders">Orders</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li>
+                    <a href="/user/transactions">Transactions</a>
+                  </li>
+                )}
+                {authUser && (
+                  <li onClick={logout}>
+                    <a href="#">Logout</a>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
@@ -129,6 +109,7 @@ const Header: React.FC<any> = () => {
                       height={100}
                       src="/assets/jobie-agro-logo.png"
                       alt="logo"
+                      style={{ width: '250px' }}
                     />
                   </Link>
                 </div>
@@ -146,9 +127,9 @@ const Header: React.FC<any> = () => {
                         />
                       </div>
                       <div className="ht-add-content">
-                        <span>72AH, Victoria,</span>
+                        <span>4 Oriokuku Street,</span>
                         <span className="d-block text-bold">
-                          Collins Street West USA
+                        Glass industry road Aba Abia state.
                         </span>
                       </div>
                     </li>
@@ -180,7 +161,7 @@ const Header: React.FC<any> = () => {
                       <div className="ht-add-content">
                         <span>Make Call </span>
                         <span className="d-block text-bold">
-                          +88-6487-5962-563
+                          +234(0)7088479448
                         </span>
                       </div>
                     </li>
@@ -203,6 +184,7 @@ const Header: React.FC<any> = () => {
                           height={250}
                           src="/assets/jobie-agro-logo.png"
                           alt="logo"
+                          style={{ width: '250px' }}
                         />
                       </Link>
                     </div>
@@ -215,7 +197,9 @@ const Header: React.FC<any> = () => {
                       </li>
 
                       <li>
-                        <Link href="/shop">Shop</Link>
+                        <Link  href="/shop" legacyBehavior>
+                        <a>Shop</a>
+                        </Link>
                       </li>
 
                       <li>
@@ -235,7 +219,7 @@ const Header: React.FC<any> = () => {
                     {authUser && (
                       <ul className="lab-ul ml-auto">
                         <li>
-                          <Link legacyBehavior href="/profile">
+                          <Link legacyBehavior href="/user">
                             <a>My profile</a>
                           </Link>
                         </li>
@@ -244,7 +228,70 @@ const Header: React.FC<any> = () => {
                         </li>
                       </ul>
                     )}
-                    <Carts />
+                    <ul className="lab-ul search-cart">
+                      <li>
+                        <div className="cart-option">
+                          <i className="icofont-cart-alt"></i>
+                          <div className="cart-content">
+                            <div className="cart-item">
+                              <div className="cart-img">
+                                <a href="#">
+                                  <img
+                                    src="/assets/images/products/product/01.png"
+                                    alt="cart"
+                                  />
+                                </a>
+                              </div>
+                              <div className="cart-des">
+                                <a href="#">Product Title Here</a>
+                                <p>$20.00</p>
+                              </div>
+                              <div className="cart-btn">
+                                <a href="#">
+                                  <i className="icofont-close-circled"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div className="cart-item">
+                              <div className="cart-img">
+                                <a href="#">
+                                  <img
+                                    src="/assets/images/products/product/02.png"
+                                    alt="cart"
+                                  />
+                                </a>
+                              </div>
+                              <div className="cart-des">
+                                <a href="#">Product Title Here</a>
+                                <p>$20.00</p>
+                              </div>
+                              <div className="cart-btn">
+                                <a href="#">
+                                  <i className="icofont-close-circled"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div className="cart-bottom">
+                              <div className="cart-subtotal">
+                                <p className="mb-2 d-flex justify-end">
+                                  Total: <b>$40.00</b>
+                                </p>
+                              </div>
+                              <div className="cart-action d-flex justify-between">
+                                <Link href="/shop/my-cart" legacyBehavior>
+                                <a className="lab-btn">
+                                  <span>View Cart</span>
+                                </a>
+                                </Link>
+                                <a href="#" className="lab-btn">
+                                  <span>Check Out</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -257,7 +304,7 @@ const Header: React.FC<any> = () => {
       <LoginDialog show={showLogin} handleClose={handleCloseLoginDialog} />
       <SignupDialog show={showSignUp} handleClose={handleCloseSignupDialog} />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
