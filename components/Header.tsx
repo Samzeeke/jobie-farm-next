@@ -273,14 +273,16 @@ const Header: React.FC<any> = () => {
                             </div>
                             <div className="cart-bottom">
                               <div className="cart-subtotal">
-                                <p>
-                                  Total: <b className="float-right">$40.00</b>
+                                <p className="mb-2 d-flex justify-end">
+                                  Total: <b>$40.00</b>
                                 </p>
                               </div>
-                              <div className="cart-action">
-                                <a href="#" className="lab-btn">
+                              <div className="cart-action d-flex justify-between">
+                                <Link href="/shop/my-cart" legacyBehavior>
+                                <a className="lab-btn">
                                   <span>View Cart</span>
                                 </a>
+                                </Link>
                                 <a href="#" className="lab-btn">
                                   <span>Check Out</span>
                                 </a>
