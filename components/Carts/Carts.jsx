@@ -32,7 +32,10 @@ const Carts = () => {
                     <Link href="/shop/my-cart" className="lab-btn">
                       <span>View Cart</span>
                     </Link>
-                    <Link href="#" className={`lab-btn ${classes.link}`}>
+                    <Link
+                      href="/shop/checkouts"
+                      className={`lab-btn ${classes.link}`}
+                    >
                       <span>Check Out</span>
                     </Link>
                   </div>

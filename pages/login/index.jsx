@@ -15,7 +15,7 @@ const Login = () => {
         <h1 className={classes.h1}>Welcome back!</h1>
         <Form onSubmit={signInHandler} />
         <p className={classes.p}>
-          Don not have an account?
+          Do not have an account?
           <Link href="/signup" className={classes.a}>
             Create now
           </Link>

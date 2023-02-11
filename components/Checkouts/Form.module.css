@@ -1,0 +1,170 @@
+.contact__form {
+  width: 65%;
+  margin: 0 auto;
+  padding: 3rem 5rem;
+  box-shadow: 0px 8px 16px rgba(205, 218, 240, 0.79);
+  border-radius: 20px;
+}
+
+.h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row__left {
+  flex-basis: 45%;
+}
+.row__right {
+  flex-basis: 45%;
+}
+
+.h3 {
+  font-size: 1.3rem;
+  letter-spacing: 0.06rem;
+  margin: 2rem 0;
+}
+.link:link {
+  color: blue;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: rgba(0, 0, 255, 0.872);
+}
+
+.btn__box {
+  width: 20%;
+}
+
+.button {
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1.4rem;
+  background: #102a63;
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #102a63bc;
+}
+
+.error__message {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  border: 0.1rem solid rgba(255, 0, 0, 0.3);
+  font-size: 1.6rem;
+  background-color: rgba(249, 38, 38, 0.3);
+  color: white;
+  padding: 0.5rem 0;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  border-radius: 10rem;
+}
+
+.success__message {
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  border: 0.1rem solid rgba(0, 128, 0, 0.3);
+  font-size: 1.6rem;
+  background-color: rgba(0, 128, 0, 0.3);
+  border-radius: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.9rem 0;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+.invalid__input {
+  margin-top: -1.6rem;
+  color: rgba(253, 46, 46, 0.7);
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.label {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #6f6f6f;
+}
+
+.select {
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #acacac;
+  margin: 0.7rem 0 1.4rem 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  color: #acacac;
+  width: 100%;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.input {
+  padding: 0.9rem 1rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #acacac;
+  font-size: 1.6rem;
+  font-weight: 300;
+  width: 100%;
+  margin-top: 1.6rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: #acacac;
+  font-weight: 400;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+}
+
+@media only screen and (max-width: 650px) {
+  .contact__form {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.07rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+  .row__left {
+    width: 100%;
+  }
+  .row__right {
+    width: 100%;
+  }
+
+  .h3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    margin: 1rem 0;
+  }
+  .link {
+    color: blue;
+  }
+
+  .btn__box {
+    width: 40%;
+  }
+}
