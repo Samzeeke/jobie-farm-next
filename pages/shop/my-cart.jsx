@@ -19,7 +19,7 @@ const MyCarts = () => {
         </div>
         <div className={classes.btn__box}>
           {" "}
-          <Button to="#" link className={classes.button}>
+          <Button to="/shop/checkouts" link className={classes.button}>
             Check Out
           </Button>
         </div>
