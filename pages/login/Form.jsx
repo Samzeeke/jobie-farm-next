@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { ValidatePassword, ValidateEmail } from "../SignUp/lib";
+import { ValidatePassword, ValidateEmail } from "../signup/Validations";
 
 import Input from "./Input";
 import Button from "../../components/Button";
 
-import classes from "./Form.module.css";
+import classes from "./LoginForm.module.css";
+import Link from "next/link";
 const Form = (props) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordIcon] = useState(true);
@@ -108,7 +109,9 @@ const Form = (props) => {
           MinLength(8), uppercase, lowercase, character, number
         </pre>
       )}
-
+      <Link href="/forgot-password" className={classes.forget}>
+        Forgot password
+      </Link>
       <div className={classes.btn__box}>
         <Button id="btn__submit" type="submit" className={classes.button}>
           Sign In
