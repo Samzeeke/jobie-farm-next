@@ -30,6 +30,7 @@ export function AuthUserProvider({ children }: AuthUserProviderProp) {
   const router = useRouter()
 
   useEffect(() => {
+    console.log('auth.authUser',auth.authUser)
     if(!auth.authUser) {
         router.push("/")
     }
