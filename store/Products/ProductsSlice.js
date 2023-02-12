@@ -46,9 +46,9 @@ const ProductsSlice = createSlice({
       const existingItem = state.carts.find((item) => item.id === id);
       const updatedAmount = +state.totalAmount - +existingItem.price;
       state.totalAmount = updatedAmount.toFixed(2);
+      state.totalQuantity--;
       if (existingItem.quantity === 1) {
         state.carts = state.carts.filter((item) => item.id !== id);
-        state.totalQuantity--;
       } else {
         const newAmount = existingItem.totalPrice - existingItem.price;
         existingItem.quantity--;

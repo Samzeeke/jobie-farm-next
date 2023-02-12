@@ -31,3 +31,12 @@
 .a:active {
   color: #b1580f;
 }
+
+@media only screen and (max-width: 650px) {
+  .login {
+    width: 100%;
+    box-shadow: none;
+    padding: 1rem;
+    border-radius: 0;
+  }
+}

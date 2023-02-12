@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ValidatePassword, ValidateEmail } from "./lib";
+import { ValidatePassword, ValidateEmail } from "../signup/Validations";
 
 import Input from "../Login/Input";
 import Button from "../../components/Button";
@@ -238,21 +238,6 @@ const Form = (props) => {
       data-testid="login__form"
     >
       <Input
-        id="lastname"
-        label="Last Name"
-        type="text"
-        invalid={!form.lastnameIsValid && form.lastname ? "invalid" : ""}
-        placeholder="Enter your lastname"
-        value={form.lastname}
-        onChange={lastnameOnChangeHandler}
-        onBlur={lastnameOnBlurHandler}
-      />
-      {form.lastnameIsFocus && !form.lastnameIsValid && (
-        <pre className={classes.invalid__input}>
-          Enter a lastname of length above 3 & not more than 8
-        </pre>
-      )}
-      <Input
         id="firstname"
         label="First Name"
         type="text"
@@ -267,6 +252,22 @@ const Form = (props) => {
           Enter a firstname of length above 3 & not more than 8
         </pre>
       )}
+      <Input
+        id="lastname"
+        label="Last Name"
+        type="text"
+        invalid={!form.lastnameIsValid && form.lastname ? "invalid" : ""}
+        placeholder="Enter your lastname"
+        value={form.lastname}
+        onChange={lastnameOnChangeHandler}
+        onBlur={lastnameOnBlurHandler}
+      />
+      {form.lastnameIsFocus && !form.lastnameIsValid && (
+        <pre className={classes.invalid__input}>
+          Enter a lastname of length above 3 & not more than 8
+        </pre>
+      )}
+
       <Input
         id="email"
         label="Email"
