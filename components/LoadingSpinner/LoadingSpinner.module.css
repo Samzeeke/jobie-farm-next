@@ -1,0 +1,15 @@
+spinner {
+  height: 4.5rem;
+  width: 4.5rem;
+  fill: rgb(83, 81, 81);
+  animation: spinner 2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
