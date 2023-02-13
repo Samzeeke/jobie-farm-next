@@ -1,5 +1,5 @@
 .contact__form {
-  width: 50%;
+  width: 45%;
   margin: 4rem auto 2rem;
 }
 
@@ -40,6 +40,13 @@
 
 .button:hover {
   background: linear-gradient(to bottom left, rgba(75, 68, 68, 0.7), #ffc107);
+}
+
+@media only screen and (max-width: 1000px) {
+  .contact__form {
+    width: 80%;
+    padding: 2rem;
+  }
 }
 
 @media only screen and (max-width: 650px) {
