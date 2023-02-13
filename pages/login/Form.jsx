@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { ValidatePassword, ValidateEmail } from "../signup/Validations";
+import { ImSpinner2 } from "react-icons/im";
 
 import Input from "./Input";
 import Button from "../../components/Button";
 
 import classes from "./LoginForm.module.css";
 import Link from "next/link";
-const Form = (props) => {
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+const Form = ({ onSubmit, loading }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordIcon] = useState(true);
   const [form, setForm] = useState({
@@ -70,7 +72,7 @@ const Form = (props) => {
     event.preventDefault();
 
     // Send form details to parent component
-    props.onSubmit({
+    onSubmit({
       email: form.email,
       password: form.password,
     });
@@ -113,8 +115,13 @@ const Form = (props) => {
         Forgot password
       </Link>
       <div className={classes.btn__box}>
-        <Button id="btn__submit" type="submit" className={classes.button}>
-          Sign In
+        <Button
+          disabled={loading}
+          id="btn__submit"
+          type="submit"
+          className={classes.button}
+        >
+          {loading ? <LoadingSpinner /> : "Sign In"}
         </Button>
       </div>
     </form>

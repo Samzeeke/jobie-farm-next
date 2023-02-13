@@ -6,7 +6,8 @@ import Input from "../Login/Input";
 import Button from "../../components/Button";
 
 import classes from "./Form.module.css";
-const Form = (props) => {
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+const Form = ({ setError, loading, onSubmit }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [passwordIcon] = useState(true);
   const [form, setForm] = useState({
@@ -202,14 +203,13 @@ const Form = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
     // Send form details to backend
-    props.onSubmit({
+    onSubmit({
       first_name: form.firstname,
       last_name: form.lastname,
       email: form.email,
       password: form.password,
-      repeat_password: form.password,
+      repeat_password: form.confirmpassword,
     });
 
     // Clearing the input fields
@@ -326,10 +326,10 @@ const Form = (props) => {
         <Button
           id="btn__submit"
           type="submit"
-          disabled={!form.formIsValid}
+          disabled={!form.formIsValid || loading}
           className={classes.button}
         >
-          Sign up
+          {loading ? <LoadingSpinner /> : "Sign up"}
         </Button>
       </div>
     </form>
