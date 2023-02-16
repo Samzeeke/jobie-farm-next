@@ -16,12 +16,6 @@ const ProductsSlice = createSlice({
       state.products = action.payload.products;
     },
     addCartItem(state, action) {
-      // Showing notification for added item
-      // state.changed = true;
-      // setTimeout(() => {
-      //   state.changed = false;
-      // }, 2000);
-
       state.totalQuantity++;
       const newItem = action.payload;
       const existingItem = state.carts.find((item) => item.id === newItem.id);

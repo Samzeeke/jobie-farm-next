@@ -25,35 +25,37 @@ const SelectedItem = ({ title, price, totalPrice, id, image, quantity }) => {
     );
   };
   return (
-    <tr className={classes.tr}>
-      <td>
-        <i
-          className={`icofont-ui-delete ${classes.delete}`}
-          onClick={deleteCartItems}
-        ></i>
-      </td>
-      <td>
-        <Image src={image} width={120} height={20} alt={title} />
-      </td>
-      <td>{title}</td>
-      <td className={classes.quantity}>
-        <span>
+    <>
+      <tr className={classes.tr}>
+        <td>
           <i
-            className={`icofont-minus ${classes.add}`}
-            onClick={reduceCartItem}
+            className={`icofont-ui-delete ${classes.delete}`}
+            onClick={deleteCartItems}
           ></i>
-        </span>
-        {quantity}{" "}
-        <span>
-          <i
-            className={`icofont-plus ${classes.add}`}
-            onClick={increaseCartItem}
-          ></i>
-        </span>
-      </td>
-      <td>{price}</td>
-      <td>{totalPrice}</td>
-    </tr>
+        </td>
+        <td className={classes.image}>
+          <Image src={image} width={120} height={20} alt={title} />
+        </td>
+        <td>{title}</td>
+        <td>
+          <span>
+            <i
+              className={`icofont-minus ${classes.add}`}
+              onClick={reduceCartItem}
+            ></i>
+          </span>
+          {quantity}{" "}
+          <span>
+            <i
+              className={`icofont-plus ${classes.add}`}
+              onClick={increaseCartItem}
+            ></i>
+          </span>
+        </td>
+        <td>{price}</td>
+        <td>{totalPrice}</td>
+      </tr>
+    </>
   );
 };
 export default SelectedItem;

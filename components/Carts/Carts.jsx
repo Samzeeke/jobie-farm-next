@@ -28,14 +28,11 @@ const Carts = () => {
                       Total: <b className="float-right">${totalAmount}</b>
                     </p>
                   </div>
-                  <div className="cart-action">
+                  <div className={`cart-action ${classes.cart__button}`}>
                     <Link href="/shop/my-cart" className="lab-btn">
                       <span>View Cart</span>
                     </Link>
-                    <Link
-                      href="/shop/checkouts"
-                      className={`lab-btn ${classes.link}`}
-                    >
+                    <Link href="/shop/checkouts" className={`lab-btn`}>
                       <span>Check Out</span>
                     </Link>
                   </div>

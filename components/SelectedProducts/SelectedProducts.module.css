@@ -1,36 +1,134 @@
-.table {
-  margin: 3rem 2rem;
-  width: 100%;
-  border-bottom: 0.001rem solid rgba(168, 164, 164, 0.364);
+@media screen and (min-width: 650px) {
+  .desktop {
+    display: flex;
+    visibility: visible;
+  }
+  .mobile {
+    display: none;
+  }
+
+  .table {
+    margin: 3rem 2rem;
+    width: 100%;
+    border-bottom: 0.001rem solid rgba(168, 164, 164, 0.364);
+  }
+
+  .tr > th,
+  .tr > td {
+    padding-bottom: 1rem;
+  }
+
+  .delete {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #62584d;
+    transition: all 0.3s;
+  }
+  .delete:hover {
+    color: #fd7e14;
+    transform: scale(1.02);
+  }
+
+  .add {
+    cursor: pointer;
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #62584d;
+    transition: all 0.3s;
+  }
+  .add:hover {
+    color: #fd7e14;
+    transform: scale(1.01);
+  }
+  .image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
 }
 
-.tr > th,
-.tr > td {
-  padding-bottom: 1rem;
-}
+/* Mobile view */
+@media (max-width: 650px) {
+  .desktop {
+    display: none;
+    visibility: hidden;
+  }
+  .mobile {
+    display: flex;
+  }
 
-.delete {
-  cursor: pointer;
-  font-size: 1.5rem;
-  color: #62584d;
-  transition: all 0.3s;
-}
-.delete:hover {
-  color: #fd7e14;
-  transform: scale(1.02);
-}
-.quantity {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-evenly;
-}
-.add {
-  cursor: pointer;
-  font-size: 1rem;
-  color: #62584d;
-  transition: all 0.3s;
-}
-.add:hover {
-  color: #fd7e14;
-  transform: scale(1.01);
+  .ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .li {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  .box__1 {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .title__box {
+    flex-basis: 70%;
+    margin-left: 1rem;
+    text-align: left;
+  }
+  .title {
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .price__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  .delete {
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-right: 1rem;
+  }
+  .delete:hover {
+    color: #fd7e14;
+    transform: scale(1.01);
+  }
+  .add {
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    margin: 0 0.6rem;
+  }
+  .add:hover {
+    color: #fd7e14;
+    transform: scale(1.01);
+  }
+  .total__price {
+    align-self: flex-start;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 1rem 0;
+  }
 }
