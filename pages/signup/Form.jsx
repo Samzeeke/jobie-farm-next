@@ -15,14 +15,17 @@ const Form = ({ setError, loading, onSubmit }) => {
     lastname: "",
     email: "",
     password: "",
+    phone: "",
     confirmpassword: "",
     firstnameIsValid: false,
+    phoneIsValid: false,
     lastnameIsValid: false,
     emailIsValid: false,
     passwordIsValid: false,
     confirmpasswordIsValid: false,
     firstnameIsFocus: false,
     lastnameIsFocus: false,
+    phoneIsFocus: false,
     emailIsFocus: false,
     confirmpasswordIsFocus: false,
     formIsValid: false,
@@ -53,6 +56,23 @@ const Form = ({ setError, loading, onSubmit }) => {
     const isValid = e.target.value.length > 3 || e.target.value.length < 10;
 
     if (lastnameIsValid && isValid) {
+      setForm((prev) => {
+        return { ...prev, formIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, formIsValid: false };
+      });
+    }
+  };
+  const phoneOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, phone: e.target.value };
+    });
+    const { phoneIsValid } = form;
+    const isValid = e.target.value.startsWith("+");
+
+    if (phoneIsValid && isValid) {
       setForm((prev) => {
         return { ...prev, formIsValid: true };
       });
@@ -146,6 +166,21 @@ const Form = ({ setError, loading, onSubmit }) => {
     } else {
       setForm((prev) => {
         return { ...prev, lastnameIsValid: false };
+      });
+    }
+  };
+  const phoneOnBlurHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, phoneIsFocus: true };
+    });
+
+    if (form.phone.startsWith("+")) {
+      setForm((prev) => {
+        return { ...prev, phoneIsValid: true };
+      });
+    } else {
+      setForm((prev) => {
+        return { ...prev, phoneIsValid: false };
       });
     }
   };
@@ -280,6 +315,19 @@ const Form = ({ setError, loading, onSubmit }) => {
       />
       {form.emailIsFocus && !form.emailIsValid && (
         <pre className={classes.invalid__input}>Enter a valid email.</pre>
+      )}
+      <Input
+        id="phone"
+        label="Phone Number"
+        type="number"
+        invalid={!form.phoneIsValid && form.phoneIsFocus ? "invalid" : ""}
+        placeholder="e.g, +2349021002100"
+        value={form.phone}
+        onChange={phoneOnChangeHandler}
+        onBlur={phoneOnBlurHandler}
+      />
+      {form.phoneIsFocus && !form.phoneIsValid && (
+        <pre className={classes.invalid__input}>Enter a Valid number</pre>
       )}
       <Input
         id="password"

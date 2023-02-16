@@ -1,5 +1,15 @@
-import classes from "./Checkouts.module.css";
-const Flutter = () => {
-  return <div className={classes.bank}>Coming Soon...</div>;
+import { MdCancel } from "react-icons/md";
+import Modal from "../Modal/Modal";
+import classes from "./Flutter.module.css";
+const Flutter = ({ onClose }) => {
+  const closeModal = () => {
+    onClose();
+  };
+  return (
+    <Modal onClick={closeModal}>
+      <div className={classes.flutter}>Coming soon....</div>
+      <MdCancel className={classes.cancel} onClick={closeModal} />
+    </Modal>
+  );
 };
 export default Flutter;

@@ -3,12 +3,12 @@ import Button from "../../components/Button";
 import Input from "./Input";
 
 import classes from "./CheckoutForm.module.css";
-const Form = (props) => {
+const Form = ({ onBank, onFlutter, onPaystack }) => {
   const [form, setForm] = useState({
     email: "",
     firstName: "",
     lastName: "",
-    amounts: "",
+    address: "",
     zip: "",
     country: "",
   });
@@ -22,9 +22,9 @@ const Form = (props) => {
       return { ...prev, lastName: e.target.value };
     });
   };
-  const amountOnChangeHandler = (e) => {
+  const addressOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, amounts: e.target.value };
+      return { ...prev, address: e.target.value };
     });
   };
 
@@ -43,24 +43,46 @@ const Form = (props) => {
       return { ...prev, zip: e.target.value };
     });
   };
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    // Send form details to backend
-    props.onSubmit({
-      email: form.email,
-      firstname: form.firstName,
-      lastname: form.lastName,
-      amounts: form.amounts,
-      zip: form.zip,
-      country: form.country,
+  const phoneOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, phone: e.target.value };
+    });
+  };
+  const stateOnChangeHandler = (e) => {
+    setForm((prev) => {
+      return { ...prev, state: e.target.value };
     });
   };
 
+  const payStackHandler = (event) => {
+    event.preventDefault();
+    onPaystack({
+      email: form.email,
+      firstname: form.firstName,
+      lastname: form.lastName,
+      address: form.address,
+      zip: form.zip,
+      country: form.country,
+      state: form.state,
+      phone: form.phone,
+    });
+  };
+
+  const bankHandler = (event) => {
+    event.preventDefault();
+
+    onBank();
+  };
+  const flutterHandler = (event) => {
+    event.preventDefault();
+
+    console.log("flutter");
+    onFlutter();
+  };
+
   return (
-    <form className={classes.contact__form} onSubmit={submitHandler}>
-      <h1 className={classes.h1}>Paystack</h1>
+    <form className={classes.contact__form} noValidate>
+      <h1 className={classes.h1}>Shopping Details</h1>
       <div className={classes.row}>
         <div className={classes.row__left}>
           <Input
@@ -86,22 +108,44 @@ const Form = (props) => {
       <div className={classes.row}>
         <div className={classes.row__left}>
           <Input
-            id="country"
-            label="Country"
-            type="text"
-            placeholder="Where are you from"
-            value={form.country}
-            onChange={countryOnChangeHandler}
+            id="phone"
+            label="Phone Number"
+            type="nomber"
+            placeholder="Enter your phone number"
+            value={form.phone}
+            onChange={phoneOnChangeHandler}
           />
         </div>
         <div className={classes.row__right}>
           <Input
             id="zip"
             label="Zip Code"
-            type="text"
+            type="nomber"
             placeholder="Enter your zip code"
             value={form.zip}
             onChange={zipOnChangeHandler}
+          />
+        </div>
+      </div>
+      <div className={classes.row}>
+        <div className={classes.row__left}>
+          <Input
+            id="state"
+            label="State"
+            type="text"
+            placeholder="Enter your State"
+            value={form.state}
+            onChange={stateOnChangeHandler}
+          />
+        </div>
+        <div className={classes.row__right}>
+          <Input
+            id="country"
+            label="Country"
+            type="text"
+            placeholder="Where are you from"
+            value={form.country}
+            onChange={countryOnChangeHandler}
           />
         </div>
       </div>
@@ -115,17 +159,38 @@ const Form = (props) => {
         onChange={emailOnChangeHandler}
       />
       <Input
-        id="amounts"
-        label="Amounts to charge"
-        type="number"
-        placeholder="Enter Amount to charge"
-        value={form.email}
-        onChange={amountOnChangeHandler}
+        id="address"
+        label="House Address"
+        type="text"
+        placeholder="Enter your address"
+        value={form.address}
+        onChange={addressOnChangeHandler}
       />
 
       <div className={classes.btn__box}>
-        <Button id="btn__submit" type="submit" className={classes.button}>
-          Pay Now
+        <Button
+          id="btn__submit"
+          type="button"
+          className={classes.button}
+          onClick={bankHandler}
+        >
+          Pay with Bank
+        </Button>
+        <Button
+          id="btn__submit"
+          type="button"
+          className={classes.button}
+          onClick={payStackHandler}
+        >
+          Pay with PayStack
+        </Button>
+        <Button
+          id="btn__submit"
+          type="button"
+          className={classes.button}
+          onClick={flutterHandler}
+        >
+          Pay with Flutter
         </Button>
       </div>
     </form>
