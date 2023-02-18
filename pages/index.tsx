@@ -358,6 +358,7 @@ export default function Home() {
                 to="#"
                 className="text-center mt-3 mb-2 lab-btn"
                 onClick={() => router.push("/shop")}
+                disabled={false}
               >
                 Shop now
               </Button>

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { ValidatePassword } from "../signup/Validations";
 
-import Input from "../Login/Input";
+import Input from "../login/LoginInput";
 import Button from "../../components/Button";
 
 import classes from "./ResetForm.module.css";

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ValidatePassword, ValidateEmail } from "../signup/Validations";
 import { ImSpinner2 } from "react-icons/im";
 
-import Input from "./Input";
+import Input from "./LoginInput";
 import Button from "../../components/Button";
 
 import classes from "./LoginForm.module.css";

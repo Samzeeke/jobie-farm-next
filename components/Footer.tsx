@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 const Footer: React.FC<any> = () => {
   return (
@@ -198,9 +199,9 @@ const Footer: React.FC<any> = () => {
               <p className="text-center">
                 &copy; 2022 <a href="index.html">JobieAgro Farm</a>.All Rights
                 Reserved By{" "}
-                <a href="https://edsolution.co.uk" target="_blank">
+                <Link href="https://edsolution.co.uk" target="_blank" rel="noreferrer">
                   Ed Solution
-                </a>
+                </Link>
               </p>
             </div>
           </div>

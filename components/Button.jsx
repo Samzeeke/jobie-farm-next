@@ -1,5 +1,6 @@
 import Link from "next/link";
 import classes from "../styles/Button.module.css";
+
 const Button = ({ disabled, link, to, className, onClick, children }) => {
   if (link)
     return (
@@ -8,7 +9,11 @@ const Button = ({ disabled, link, to, className, onClick, children }) => {
       </Link>
     );
   return (
-    <button disabled={disabled} onClick={onClick} className={` ${className} ${classes.button}`}>
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={` ${className} ${classes.button}`}
+    >
       {children}
     </button>
   );
