@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Form from "./Form";
+import Form from "./ResetForm";
 import classes from "./ResetForm.module.css";
 const ResetPassword = () => {
   const getFormDetails = (formData) => {

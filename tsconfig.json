@@ -24,7 +24,10 @@
     "components/Products/ProductItem.jsx",
     "components/Products/ProductItem.jsx",
     "pages/index.tsx",
-    "pages/index.tsx"
-, "hooks/useFirebaseAuth.jsx"  ],
+    "pages/index.tsx",
+    "hooks/useFirebaseAuth.jsx",
+    "components/Button.jsx",
+    "components/Button.jsx"
+  ],
   "exclude": ["node_modules"]
 }

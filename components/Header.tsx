@@ -77,17 +77,17 @@ const Header: React.FC<any> = () => {
                 )}
                 {authUser && (
                   <li>
-                    <a href="/user/orders">Orders</a>
+                    <Link href="/user/orders">Orders</Link>
                   </li>
                 )}
                 {authUser && (
                   <li>
-                    <a href="/user/transactions">Transactions</a>
+                    <Link href="/user/transactions">Transactions</Link>
                   </li>
                 )}
                 {authUser && (
                   <li onClick={logout}>
-                    <a href="#">Logout</a>
+                    <Link href="#">Logout</Link>
                   </li>
                 )}
               </ul>
