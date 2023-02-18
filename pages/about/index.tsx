@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 export default function About() {
   return (
@@ -29,7 +29,9 @@ export default function About() {
           <div className="row align-items-center mb-15">
             <div className="col-lg-6 col-12">
               <div className="about-thumb">
-                <img src="/assets/images/about/01.png" alt="about-thumb" />
+                <picture>
+                  <img src="/assets/images/about/01.png" alt="about-thumb" />
+                </picture>
               </div>
             </div>
             <div className="col-lg-6 col-12">
@@ -37,7 +39,7 @@ export default function About() {
                 <div className="about-title">
                   <h2>
                     <span className="d-lg-block">
-                      Welcome to Our Poultry And{" "}
+                      Welcome to Our Poultry And{' '}
                     </span>
                     Egg Farm.
                   </h2>
@@ -63,7 +65,7 @@ export default function About() {
                     </li>
                     <li className="list-group-item py-1 px-0 border-none">
                       <i className="icofont-tick-boxed mr-2 color-theme"></i>
-                      Learn how to grow your Business{" "}
+                      Learn how to grow your Business{' '}
                     </li>
                     <li className="list-group-item py-1 px-0 border-none">
                       <i className="icofont-tick-boxed mr-2 color-theme"></i>
@@ -85,16 +87,18 @@ export default function About() {
               <div className="lab-item">
                 <div className="lab-inner">
                   <div className="lab-thumb">
+                    <picture>
                     <img
                       src="/assets/images/feature/01.png"
                       alt="Feature Image"
                     />
+                    </picture>
                   </div>
                   <div className="lab-content">
                     <h6>Products Range</h6>
                     <p>
                       Conveniently customize recaptiualize focused inter without
-                      globally{" "}
+                      globally{' '}
                     </p>
                   </div>
                 </div>
@@ -104,16 +108,18 @@ export default function About() {
               <div className="lab-item">
                 <div className="lab-inner">
                   <div className="lab-thumb">
+                    <picture>
                     <img
                       src="/assets/images/feature/02.png"
                       alt="Feature image"
                     />
+                    </picture>
                   </div>
                   <div className="lab-content">
                     <h6>Quality Matters</h6>
                     <p>
                       Conveniently customize recaptiualize focused inter without
-                      globally{" "}
+                      globally{' '}
                     </p>
                   </div>
                 </div>
@@ -123,16 +129,18 @@ export default function About() {
               <div className="lab-item">
                 <div className="lab-inner">
                   <div className="lab-thumb">
-                    <img
+                   <picture>
+                   <img
                       src="/assets/images/feature/03.png"
                       alt="Feature image"
                     />
+                   </picture>
                   </div>
                   <div className="lab-content">
                     <h6>Free Shipping</h6>
                     <p>
                       Conveniently customize recaptiualize focused inter without
-                      globally{" "}
+                      globally{' '}
                     </p>
                   </div>
                 </div>
@@ -142,16 +150,18 @@ export default function About() {
               <div className="lab-item">
                 <div className="lab-inner">
                   <div className="lab-thumb">
-                    <img
+                   <picture>
+                   <img
                       src="/assets/images/feature/04.png"
                       alt="Feature image"
                     />
+                   </picture>
                   </div>
                   <div className="lab-content">
                     <h6>Customer Satisfaction</h6>
                     <p>
                       Conveniently customize recaptiualize focused inter without
-                      globally{" "}
+                      globally{' '}
                     </p>
                   </div>
                 </div>
@@ -177,10 +187,12 @@ export default function About() {
                       <div className="lab-item">
                         <div className="lab-inner">
                           <div className="lab-thumb">
+                            <picture>
                             <img
                               src="/assets/images/about/history/01.jpg"
                               alt="history-img"
                             />
+                            </picture>
                           </div>
                           <div className="lab-content">
                             <div className="history-left">
@@ -208,10 +220,12 @@ export default function About() {
                       <div className="lab-item">
                         <div className="lab-inner">
                           <div className="lab-thumb">
-                            <img
+                           <picture>
+                           <img
                               src="/assets/images/about/history/01.jpg"
                               alt="history-img"
                             />
+                           </picture>
                           </div>
                           <div className="lab-content">
                             <div className="history-left">
@@ -249,10 +263,12 @@ export default function About() {
                         <div className="lab-item">
                           <div className="lab-inner text-center">
                             <div className="lab-thumb mb-3">
+                              <picture>
                               <img
                                 src="/assets/images/about/history/achievement/01.png"
                                 alt="Customer"
                               />
+                              </picture>
                             </div>
                             <div className="lab-content">
                               <h3>
@@ -267,10 +283,12 @@ export default function About() {
                         <div className="lab-item">
                           <div className="lab-inner text-center">
                             <div className="lab-thumb mb-3">
+                              <picture>
                               <img
                                 src="/assets/images/about/history/achievement/02.png"
                                 alt="Customer"
                               />
+                              </picture>
                             </div>
                             <div className="lab-content">
                               <h3>
@@ -285,10 +303,12 @@ export default function About() {
                         <div className="lab-item">
                           <div className="lab-inner text-center">
                             <div className="lab-thumb mb-3">
+                              <picture>
                               <img
                                 src="/assets/images/about/history/achievement/03.png"
                                 alt="Customer"
                               />
+                              </picture>
                             </div>
                             <div className="lab-content">
                               <h3>
@@ -303,10 +323,12 @@ export default function About() {
                         <div className="lab-item">
                           <div className="lab-inner text-center">
                             <div className="lab-thumb mb-3">
-                              <img
+                             <picture>
+                             <img
                                 src="/assets/images/about/history/achievement/04.png"
                                 alt="Customer"
                               />
+                             </picture>
                             </div>
                             <div className="lab-content">
                               <h3>
@@ -337,5 +359,5 @@ export default function About() {
       {/* Footer */}
       <Footer />
     </>
-  );
+  )
 }
