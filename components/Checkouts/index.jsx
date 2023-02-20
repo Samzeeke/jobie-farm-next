@@ -47,13 +47,15 @@ const Checkouts = () => {
         phone: checkoutFormData?.phone,
         status: "Success",
         date: new Date().toLocaleDateString(),
+        amount: parseInt(totalAmount) * 100,
+        paymentType: "Paystack",
       });
     };
     if (success) {
       console.log("success", success);
       addToDataBase();
     }
-  }, [success, checkoutFormData]);
+  }, [success, checkoutFormData, totalAmount]);
 
   const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
@@ -82,7 +84,7 @@ const Checkouts = () => {
   };
   return (
     <div className={classes.payment__form}>
-      {bankModal && <Bank onClose={closeBank} />}
+      {bankModal && <Bank onClose={closeBank} totalAmount={totalAmount} />}
       {flutterModal && <Flutter onClose={closeFlutter} />}
       <Form
         onPaystack={getFormDatas}

@@ -52,8 +52,8 @@ const SelectedItem = ({ title, price, totalPrice, id, image, quantity }) => {
             ></i>
           </span>
         </td>
-        <td>{price}</td>
-        <td>{totalPrice}</td>
+        <td>&#8358;{price}</td>
+        <td>&#8358;{totalPrice}</td>
       </tr>
     </>
   );
