@@ -35,7 +35,7 @@ const ProductsItem = ({ id, title, image, price }) => {
               <i className="far fa-star"></i>
               <i className="far fa-star"></i>
             </div>
-            <h6 className="price">${price}</h6>
+            <h6 className="price">&#8358;{price}</h6>
             <div
               className={`${classes.add__btn} cart-option`}
               onClick={addCartItem}

@@ -4,7 +4,7 @@ import { MdCancel } from "react-icons/md";
 import classes from "./Bank.module.css";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
-const Bank = ({ onClose }) => {
+const Bank = ({ onClose, totalAmount }) => {
   const closeModal = () => {
     onClose();
   };
@@ -22,6 +22,7 @@ const Bank = ({ onClose }) => {
       phone: checkoutFormData?.phone,
       status: "Success",
       date: new Date().toLocaleDateString(),
+      amount: parseInt(totalAmount) * 100,
     });
     onClose();
   };
