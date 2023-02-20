@@ -10,7 +10,7 @@ interface AuthUserProviderProp {
 interface AuthUserProp {
   loading: boolean;
   authUser: auth.User | null;
-  signOut: () => Promise<void>;
+  signOut: () => Promise<any>;
   signInWithCustomEmailAndPassword: (
     email: string,
     password: string
@@ -19,7 +19,7 @@ interface AuthUserProp {
     email: string,
     password: string
   ) => Promise<any>;
-  updateUsername: (user: User, name: string) => Promise<void>;
+  updateUsername: (user: User, name: string) => Promise<any>;
 }
 
 const authUserContext = createContext<AuthUserProp>({
