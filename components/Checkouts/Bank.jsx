@@ -23,6 +23,7 @@ const Bank = ({ onClose, totalAmount }) => {
       status: "Success",
       date: new Date().toLocaleDateString(),
       amount: parseInt(totalAmount) * 100,
+      paymentType: "Bank Transfer",
     });
     onClose();
   };

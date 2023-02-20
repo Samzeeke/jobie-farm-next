@@ -48,6 +48,7 @@ const Checkouts = () => {
         status: "Success",
         date: new Date().toLocaleDateString(),
         amount: parseInt(totalAmount) * 100,
+        paymentType: "Paystack",
       });
     };
     if (success) {
