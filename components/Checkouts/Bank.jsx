@@ -2,10 +2,30 @@ import Button from "../Button";
 import Modal from "../Modal/Modal";
 import { MdCancel } from "react-icons/md";
 import classes from "./Bank.module.css";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase";
 const Bank = ({ onClose }) => {
   const closeModal = () => {
     onClose();
   };
+
+  const confirmPayment = async () => {
+    const docRef = collection(db, "transactions");
+    await addDoc(docRef, {
+      email: checkoutFormData?.email,
+      firstname: checkoutFormData?.firstname,
+      lastname: checkoutFormData?.lastname,
+      address: checkoutFormData?.address,
+      zip: checkoutFormData?.zip,
+      country: checkoutFormData?.country,
+      state: checkoutFormData?.state,
+      phone: checkoutFormData?.phone,
+      status: "Success",
+      date: new Date().toLocaleDateString(),
+    });
+    onClose();
+  };
+
   return (
     <Modal onClick={closeModal}>
       <div className={classes.bank}>
@@ -17,7 +37,7 @@ const Bank = ({ onClose }) => {
         </div>
         <div className={classes.div}>Account No: 0088833445</div>
         <div className={classes.btn__box}>
-          <Button onClick={closeModal} className={classes.button}>
+          <Button onClick={confirmPayment} className={classes.button}>
             I have Paid
           </Button>
         </div>
