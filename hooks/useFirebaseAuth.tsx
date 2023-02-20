@@ -24,19 +24,29 @@ export default function useFirebaseAuth() {
     setLoading(false)
   }
 
-  const signInWithCustomEmailAndPassword = (
-    email: string,
-    password: string,
-  ): Promise<UserCredential | null> =>
+  const signInWithCustomEmailAndPassword = ({
+    email,
+    password,
+  }: {
+    email: string
+    password: string
+  }): Promise<UserCredential | null> =>
     signInWithEmailAndPassword(auth, email, password)
 
-  const createNewUserWithEmailAndPassword = async (
-    email: string,
-    password: string,
-  ) => {
-   const credential = await createUserWithEmailAndPassword(auth, email, password)
-   await sendEmailVerification(credential.user)
-   return credential.user;
+  const createNewUserWithEmailAndPassword = async ({
+    email,
+    password,
+  }: {
+    email: string
+    password: string
+  }) => {
+    const credential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password,
+    )
+    await sendEmailVerification(credential.user)
+    return credential.user
   }
 
   const updateUsername = (user: User, name: string): Promise<void> =>

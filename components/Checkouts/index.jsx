@@ -7,19 +7,23 @@ import Bank from "./Bank";
 import Flutter from "./Flutter";
 
 import classes from "./Checkouts.module.css";
+import { useSelector } from "react-redux";
 const Checkouts = () => {
   const [bankModal, setBankModal] = useState(false);
   const [flutterModal, setFlutterModal] = useState(false);
+  const [checkoutFormData, setCheckoutFormData] = useState(null)
 
   const { auth } = useAuth();
+  const { totalAmount } = useSelector(state => state.products)
   const config = (email, amount) => ({
     reference: new Date().getTime().toString(),
     email,
     amount, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
     publicKey: process.env.NEXT_PUBLIC_PAYSTACK_TEXT_PUBLIC_KEY,
   });
+  // console.log('config', config(checkoutFormData?.email ?? "",  parseInt(totalAmount) * 100))
   const initializePayment = usePaystackPayment(
-    config(auth?.email ?? "", 20000)
+    config(checkoutFormData?.email ?? "", parseInt(totalAmount) * 100)
   );
   console.log("auth", auth);
   const router = useRouter();
@@ -27,7 +31,7 @@ const Checkouts = () => {
   const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
     console.log(reference);
-    router.push("/ps-checkout-success");
+    router.push("/shop/ps-checkout-success");
   };
   const onClose = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
@@ -35,7 +39,11 @@ const Checkouts = () => {
   };
   const getFormDatas = (datas) => {
     console.log(datas);
-    initializePayment(onSuccess, onClose);
+    setCheckoutFormData(datas);
+    setTimeout(() => {
+      
+      initializePayment(onSuccess, onClose);
+    }, 500);
   };
   const closeBank = () => {
     setBankModal(false);
