@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ValidateEmail } from "../signup/Validations";
+import { ValidateEmail } from "../../lib/Validations";
 
-import Input from "../login/Input";
+import Input from "../login/LoginInput";
 import Button from "../../components/Button";
 
 import classes from "./ForgotForm.module.css";
