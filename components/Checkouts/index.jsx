@@ -84,7 +84,13 @@ const Checkouts = () => {
   };
   return (
     <div className={classes.payment__form}>
-      {bankModal && <Bank onClose={closeBank} totalAmount={totalAmount} />}
+      {bankModal && (
+        <Bank
+          onClose={closeBank}
+          totalAmount={totalAmount}
+          checkoutFormData={checkoutFormData}
+        />
+      )}
       {flutterModal && <Flutter onClose={closeFlutter} />}
       <Form
         onPaystack={getFormDatas}
