@@ -4,7 +4,7 @@ import { MdCancel } from "react-icons/md";
 import classes from "./Bank.module.css";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase";
-const Bank = ({ onClose, totalAmount }) => {
+const Bank = ({ onClose, totalAmount, checkoutFormData }) => {
   const closeModal = () => {
     onClose();
   };
