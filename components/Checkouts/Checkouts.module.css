@@ -44,6 +44,16 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .payment__form {
+    margin: 6rem auto;
+    width: 75%;
+  }
+  .contact__form {
+    margin: 8rem auto;
+    width: 65%;
+  }
+}
 @media only screen and (max-width: 650px) {
   .payment__form {
     margin: 6rem auto;
