@@ -243,6 +243,7 @@ const Form = ({ setError, loading, onSubmit }) => {
       first_name: form.firstname,
       last_name: form.lastname,
       email: form.email,
+      phone: form.phone,
       password: form.password,
       repeat_password: form.confirmpassword,
     });
@@ -253,14 +254,18 @@ const Form = ({ setError, loading, onSubmit }) => {
       lastname: "",
       email: "",
       password: "",
+      phone: "",
       confirmpassword: "",
       firstnameIsValid: false,
+      phoneIsValid: false,
+      lastnameIsValid: false,
       emailIsValid: false,
       passwordIsValid: false,
       confirmpasswordIsValid: false,
-      nameIsFocus: false,
+      firstnameIsFocus: false,
+      lastnameIsFocus: false,
+      phoneIsFocus: false,
       emailIsFocus: false,
-      passwordIsFocus: false,
       confirmpasswordIsFocus: false,
       formIsValid: false,
     });
@@ -319,7 +324,7 @@ const Form = ({ setError, loading, onSubmit }) => {
       <Input
         id="phone"
         label="Phone Number"
-        type="number"
+        type="text"
         invalid={!form.phoneIsValid && form.phoneIsFocus ? "invalid" : ""}
         placeholder="e.g, +2349021002100"
         value={form.phone}
