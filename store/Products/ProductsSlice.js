@@ -6,6 +6,7 @@ const initialState = {
   totalAmount: 0,
   totalQuantity: 0,
   changed: false,
+  users: [],
 };
 
 const ProductsSlice = createSlice({
@@ -32,6 +33,7 @@ const ProductsSlice = createSlice({
           totalPrice: newItem.price,
           title: newItem.title,
           image: newItem.image,
+          type: newItem.type
         });
       }
     },
@@ -56,6 +58,9 @@ const ProductsSlice = createSlice({
       state.totalAmount = updatedAmount.toFixed(2);
       state.totalQuantity = state.totalQuantity - +existingItem.quantity;
       state.carts = state.carts.filter((item) => item.id !== id);
+    },
+    addUsers(state, action) {
+      state.users = action.payload.users;
     },
   },
 });

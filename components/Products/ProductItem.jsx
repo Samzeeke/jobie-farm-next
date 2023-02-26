@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { ProductsActions } from "../../store/Products/ProductsSlice";
 
 import classes from "../../styles/Cart.module.css";
-const ProductsItem = ({ id, title, image, price }) => {
+const ProductsItem = ({ id, title, image, price, type }) => {
   const dispatch = useDispatch();
   const addCartItem = async () => {
     dispatch(
@@ -13,6 +13,7 @@ const ProductsItem = ({ id, title, image, price }) => {
         image,
         price,
         amount: 1,
+        type
       })
     );
   };

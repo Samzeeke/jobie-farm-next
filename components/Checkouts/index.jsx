@@ -16,6 +16,9 @@ const Checkouts = () => {
   const [checkoutFormData, setCheckoutFormData] = useState(null);
   const [success, setSuccess] = useState(false);
 
+  const { users, carts } = useSelector((state) => state.products);
+  console.log(users, carts);
+
   const { auth } = useAuth();
   const { totalAmount } = useSelector((state) => state.products);
   const config = (email, amount) => ({
@@ -51,25 +54,50 @@ const Checkouts = () => {
         paymentType: "Paystack",
       });
     };
+    const createOrder = async (cartItem) => {
+      const signedInUserEmail = auth?.email;
+      const user = users.filter((user) => user.email === signedInUserEmail);
+
+      const docRef = collection(db, "orders");
+      await addDoc(docRef, {
+        title: cartItem.title,
+        type: cartItem.type,
+        price: cartItem.price,
+        quantity: cartItem.quantity,
+        totalPrice: cartItem.totalPrice,
+        paymentStatus: "Pending",
+        orderStatus: "Pending",
+        customerName: user.lastName
+          ? `${user.lastName} ${user.firstName}`
+          : "Ojerinde Joel",
+        customerEmail: user.email || "ojerindejoel@gmail.com",
+        customerPhone: user.phone || "+23409011818991 ",
+      });
+    };
     if (success) {
       console.log("success", success);
       addToDataBase();
+      carts.forEach((cartItem) => {
+        createOrder(cartItem);
+      });
     }
-  }, [success, checkoutFormData, totalAmount]);
+  }, [success, checkoutFormData, totalAmount, carts, users, auth]);
 
   const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
     // console.log(reference);
     setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 2000);
     router.push("/shop/ps-checkout-success");
   };
 
   const onClose = () => {
-    // implementation for  whatever you want to do when the Paystack dialog closed.
+    // implementation for  whatever you want to do when the Paystack dialog closed. setSuccess(true);
   };
 
   const getFormDatas = (datas) => {
-    console.log(datas);
     setCheckoutFormData(datas);
     setTimeout(() => {
       initializePayment(onSuccess, onClose);

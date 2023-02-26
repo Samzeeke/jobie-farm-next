@@ -16,6 +16,7 @@ const Products = ({ start, end }) => {
                 title={product.title}
                 image={product.image}
                 price={product.price}
+                type={product.type}
               />
             ))}
           </div>
