@@ -190,41 +190,41 @@ const Header: React.FC<any> = () => {
                     </div>
                     <ul className="lab-ul">
                       <li className="active">
-                        <Link href="/">Home</Link>
+                        <Link href="/" className="text-decoration-none">Home</Link>
                       </li>
                       <li>
-                        <Link href="/about">About</Link>
+                        <Link href="/about" className="text-decoration-none">About</Link>
                       </li>
 
                       <li>
-                        <Link href="/shop" legacyBehavior>
-                          <a>Shop</a>
+                        <Link href="/shop" className="text-decoration-none">
+                          Shop
                         </Link>
                       </li>
 
                       <li>
-                        <Link href="/contact">Contact</Link>
+                        <Link href="/contact" className="text-decoration-none">Contact</Link>
                       </li>
                     </ul>
                     {!authUser && (
                       <ul className="lab-ul ml-auto">
                         <li>
-                          <Link href="/signup">Sign Up</Link>
+                          <Link href="/signup" className="text-decoration-none">Sign Up</Link>
                         </li>
                         <li>
-                          <Link href="/login">Login</Link>
+                          <Link href="/login" className="text-decoration-none">Login</Link>
                         </li>
                       </ul>
                     )}
                     {authUser && (
                       <ul className="lab-ul ml-auto">
                         <li>
-                          <Link legacyBehavior href="/user">
-                            <a>My profile</a>
+                          <Link className="text-decoration-none" href="/user">
+                            My profile
                           </Link>
                         </li>
                         <li>
-                          <a onClick={logout}>Logout</a>
+                          <a className="text-decoration-none" onClick={logout}>Logout</a>
                         </li>
                       </ul>
                     )}

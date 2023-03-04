@@ -1,5 +1,5 @@
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 export default function Contact() {
   return (
@@ -34,7 +34,9 @@ export default function Contact() {
                     <i className="icofont-google-map"></i>
                   </div>
                   <div className="contact-details">
-                    <p>Sector # 48,123 Street,Melbourn City Australia.</p>
+                    <p>
+                      4 Oriokuku Street, Glass industry road Aba Abia state.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -44,7 +46,7 @@ export default function Contact() {
                     <i className="icofont-phone"></i>
                   </div>
                   <div className="contact-details">
-                    <p>+88978-658-125, 0078-98-954 012-859-6510003</p>
+                    <p>+234(0)7088479448</p>
                   </div>
                 </div>
               </div>
@@ -54,7 +56,7 @@ export default function Contact() {
                     <i className="icofont-envelope"></i>
                   </div>
                   <div className="contact-details">
-                    <p>poultryfarm@gmail.com www.poultryfarm.com</p>
+                    <p>hello@jobieagrofarm.com</p>
                   </div>
                 </div>
               </div>
@@ -66,8 +68,10 @@ export default function Contact() {
                 <div className="location-map">
                   <div id="map">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2171.6233168549234!2d90.38618271679425!3d23.739514243490834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b85c71927841%3A0xde102c300beb3f0c!2sWebCode%20Institute!5e0!3m2!1sen!2sbd!4v1605551468163!5m2!1sen!2sbd"
-                      allowFullScreen
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.8219894017325!2d7.380653650719103!3d5.132352396257113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10429920f1a07501%3A0x12814cd51424a7b1!2s4%20Isaac%20Close%20off%20Glass%20Industry%20Rd.!5e0!3m2!1sen!2sng!4v1677619915769!5m2!1sen!2sng"
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                   </div>
                 </div>
@@ -118,5 +122,5 @@ export default function Contact() {
       {/*  */}
       <Footer />
     </>
-  );
+  )
 }

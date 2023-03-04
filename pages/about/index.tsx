@@ -10,7 +10,7 @@ export default function About() {
         <div className="overlay"></div>
         <div className="container">
           <div className="page-header-content-area">
-            <h4 className="ph-title">Poultry Farm About us</h4>
+            <h4 className="ph-title" style={{fontSize: '35px'}}>About us</h4>
             <ul className="lab-ul">
               <li>
                 <a href="index.html">Home</a>
@@ -38,132 +38,106 @@ export default function About() {
               <div className="about-wrapper">
                 <div className="about-title">
                   <h2>
-                    <span className="d-lg-block">
-                      Welcome to Our Poultry And{' '}
-                    </span>
-                    Egg Farm.
+                    <span className="d-lg-block">Welcome to Jobie </span>
+                    Agro Farm.
                   </h2>
                   <p>
-                    Continually productize compelling quality for packed with
-                    elated Productize compelling quality for packed with all
-                    elated themv Setting up to website and creating pages.
+                    Jobie Agro Farm was born in 2022 with the aim to serve the l
+                    of South-East Region of Nigeria precisely Abia state, Imo
+                    state, Rivers State and other neighboring states. Our head
+                    office is located at 4 Oriokuku street, Glass Industry Road
+                    Aba and farm location at uche’s close Uzo-owo Road Isi-ala
+                    Itukpa in Abia State Nigeria. Jobie farm initiative was
+                    derived after a terror marketing research on how difficult
+                    small farmer owner struggled to order day old chicks and
+                    eggs down to hatching different kinds of eggs. We operate in
+                    land size of 2.5 acres and we are proud of our huge range of
+                    predominantly locally sourced quality produce of organic
+                    products. We love working with independent suppliers who are
+                    as passionate about what they do as we are!
                   </p>
                 </div>
-                <div className="about-content">
-                  <ul className="lab-ul list-group">
-                    <li className="list-group-item py-1 px-0 border-none">
-                      <i className="icofont-tick-boxed mr-2 color-theme"></i>We
-                      are providing different services
-                    </li>
-                    <li className="list-group-item py-1 px-0 border-none">
-                      <i className="icofont-tick-boxed mr-2 color-theme"></i>We
-                      are one of leading company
-                    </li>
-                    <li className="list-group-item py-1 px-0 border-none">
-                      <i className="icofont-tick-boxed mr-2 color-theme"></i>
-                      Profitability is the primary goal of all business
-                    </li>
-                    <li className="list-group-item py-1 px-0 border-none">
-                      <i className="icofont-tick-boxed mr-2 color-theme"></i>
-                      Learn how to grow your Business{' '}
-                    </li>
-                    <li className="list-group-item py-1 px-0 border-none">
-                      <i className="icofont-tick-boxed mr-2 color-theme"></i>
-                      Professional solutions for your business
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/*  */}
+
       {/*  */}
-      <section className="feature-section">
+      <section className="about-section bg_img relative padding-tb">
         <div className="container">
-          <div className="row text-center justify-content-center">
-            <div className="col-lg-3 col-sm-6 col-12">
-              <div className="lab-item">
-                <div className="lab-inner">
-                  <div className="lab-thumb">
-                    <picture>
-                    <img
-                      src="/assets/images/feature/01.png"
-                      alt="Feature Image"
-                    />
-                    </picture>
-                  </div>
-                  <div className="lab-content">
-                    <h6>Products Range</h6>
-                    <p>
-                      Conveniently customize recaptiualize focused inter without
-                      globally{' '}
-                    </p>
-                  </div>
+          <div className="row align-items-center mb-15">
+            <div className="col-lg-6 col-12">
+              <div className="about-wrapper">
+                <div className="about-title">
+                  <h2>
+                    <span className="d-lg-block">Our Values </span>
+                  </h2>
+                  <p>(Quality & Sustainability)</p>
+                  <p>
+                  &quot;Let food be thy medicine, and medicine be thy food&quot;. A
+                    beautiful saying that we follow in every step of our
+                    produce. Our organic production prioritizes your health &
+                    ensures no harm is made to the environment. Also, the
+                    production goes through multiple quality checks before they
+                    are delivered to your doorstep.
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 col-12">
-              <div className="lab-item">
-                <div className="lab-inner">
-                  <div className="lab-thumb">
-                    <picture>
-                    <img
-                      src="/assets/images/feature/02.png"
-                      alt="Feature image"
-                    />
-                    </picture>
-                  </div>
-                  <div className="lab-content">
-                    <h6>Quality Matters</h6>
-                    <p>
-                      Conveniently customize recaptiualize focused inter without
-                      globally{' '}
-                    </p>
-                  </div>
+
+            <div className="col-lg-6 col-12">
+              <div className="about-thumb">
+                <picture>
+                  <img src="/assets/images/about/02.png" alt="about-thumb" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/*  */}
+
+
+      {/*  */}
+      <section className="about-section bg_img relative padding-tb">
+        <div className="container">
+          <div className="row align-items-center mb-15">
+            <div className="col-lg-6 col-12">
+              <div className="about-wrapper">
+                <div className="about-title">
+                  <h2>
+                    What We Do 
+                  </h2>
+                  <p>Various Farming Is Mainstay For Us</p>
+                  <p>
+                    Agriculture is the mainstay of economy because of its high
+                    share in employment and livelihood creation. It&apos;s also an
+                    important source of raw material and demand for many
+                    industrial products .
+                  </p>
+                  <p> Agro Farming</p>
+                  <p>
+                    Agro Farming is advance form of traditional agriculture
+                    basically it is a skill of cultivating plants and live
+                    stock..
+                  </p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 col-12">
-              <div className="lab-item">
-                <div className="lab-inner">
-                  <div className="lab-thumb">
-                   <picture>
-                   <img
-                      src="/assets/images/feature/03.png"
-                      alt="Feature image"
-                    />
-                   </picture>
-                  </div>
-                  <div className="lab-content">
-                    <h6>Free Shipping</h6>
-                    <p>
-                      Conveniently customize recaptiualize focused inter without
-                      globally{' '}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-3 col-sm-6 col-12">
-              <div className="lab-item">
-                <div className="lab-inner">
-                  <div className="lab-thumb">
-                   <picture>
-                   <img
-                      src="/assets/images/feature/04.png"
-                      alt="Feature image"
-                    />
-                   </picture>
-                  </div>
-                  <div className="lab-content">
-                    <h6>Customer Satisfaction</h6>
-                    <p>
-                      Conveniently customize recaptiualize focused inter without
-                      globally{' '}
-                    </p>
-                  </div>
+            <div className="col-lg-6 col-12">
+              <div className="about-wrapper">
+                <div className="about-title">
+                  <h2>
+                    <span className="d-lg-block">Sustainability </span>
+                  </h2>
+                  <p>
+                    We believe in leaving no one behind. It&apos;s only fair if we
+                    make sure our fellow farmers grow with us. Our goal is to
+                    eliminate the concept of dependency on food imports. Thus,
+                    growing everything locally itself.
+                  </p>
                 </div>
               </div>
             </div>
@@ -171,191 +145,55 @@ export default function About() {
         </div>
       </section>
       {/*  */}
-      {/* HIsitroy */}
-      <section className="history-section padding-tb">
+
+      <div className='border h-80 bg-black bg-contain object-contain' style={{backgroundImage: `url("/assets/images/banner/bg-images/01.jpg")`}}>
+       
+      </div>
+
+      {/*  */}
+      <section className="about-section bg_img relative padding-tb">
         <div className="container">
-          <div className="history-header section-header text-left">
-            <h2>History</h2>
-            <h2>30 Years Farm Traditions</h2>
-          </div>
-          <div className="history-content">
-            <div className="row mb-15">
-              <div className="col-xl-8 col-12">
-                <div className="history-items">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="lab-item">
-                        <div className="lab-inner">
-                          <div className="lab-thumb">
-                            <picture>
-                            <img
-                              src="/assets/images/about/history/01.jpg"
-                              alt="history-img"
-                            />
-                            </picture>
-                          </div>
-                          <div className="lab-content">
-                            <div className="history-left">
-                              <h2 className="mb-0">Since</h2>
-                              <h2 className="mb-lg-0">
-                                <span>1985</span>
-                              </h2>
-                            </div>
-                            <div className="history-right">
-                              <p className="mb-0">
-                                Continually productize compelling quality elated
-                                them setting up to website with all them
-                                imperdiet molestieo continually productize
-                                compelling quality for packedq for packed with
-                                all elated themes setting up to website and
-                                creating pages compelling quality for packed
-                                with all elated themes setting up to website .
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="swiper-slide">
-                      <div className="lab-item">
-                        <div className="lab-inner">
-                          <div className="lab-thumb">
-                           <picture>
-                           <img
-                              src="/assets/images/about/history/01.jpg"
-                              alt="history-img"
-                            />
-                           </picture>
-                          </div>
-                          <div className="lab-content">
-                            <div className="history-left">
-                              <h2 className="mb-0">Since</h2>
-                              <h2 className="mb-lg-0">
-                                <span>1987</span>
-                              </h2>
-                            </div>
-                            <div className="history-right">
-                              <p className="mb-0">
-                                Continually productize compelling quality elated
-                                them setting up to website with all them
-                                imperdiet molestieo continually productize
-                                compelling quality for packedq for packed with
-                                all elated themes setting up to website and
-                                creating pages compelling quality for packed
-                                with all elated themes setting up to website .
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          <div className="row align-items-center mb-15">
+            <div className="col-lg-6 col-12">
+              <div className="about-wrapper">
+                <div className="about-title">
+                  <h2>
+                    <span className="d-lg-block">Our Mission</span>
+                  </h2>
+                  <p>
+                    The mission of Jobie Agro farm is to provide an outstanding
+                    level of service and expertise in the real estate market
+                    that is innovative and ambitious. The Jobie Agro Farm is
+                    dedicated to the highest standards, systems and performance
+                    necessary to fulfill all of your needs
+                  </p>
                 </div>
               </div>
-              <div className="col-xl-4 col-12">
-                <div className="achievement text-center mt-lg-0">
-                  <div className="achievement-title">
-                    <h3>Our Achievement</h3>
-                  </div>
-                  <div className="achievement-content">
-                    <div className="row justify-content-center">
-                      <div className="col-xl-6 col-lg-3 col-md-3 col-6">
-                        <div className="lab-item">
-                          <div className="lab-inner text-center">
-                            <div className="lab-thumb mb-3">
-                              <picture>
-                              <img
-                                src="/assets/images/about/history/achievement/01.png"
-                                alt="Customer"
-                              />
-                              </picture>
-                            </div>
-                            <div className="lab-content">
-                              <h3>
-                                <span className="counter">6,200</span>
-                              </h3>
-                              <h5>Customers</h5>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-3 col-md-3 col-6">
-                        <div className="lab-item">
-                          <div className="lab-inner text-center">
-                            <div className="lab-thumb mb-3">
-                              <picture>
-                              <img
-                                src="/assets/images/about/history/achievement/02.png"
-                                alt="Customer"
-                              />
-                              </picture>
-                            </div>
-                            <div className="lab-content">
-                              <h3>
-                                <span className="counter">400</span>+
-                              </h3>
-                              <h5>Award Won</h5>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-3 col-md-3 col-6">
-                        <div className="lab-item">
-                          <div className="lab-inner text-center">
-                            <div className="lab-thumb mb-3">
-                              <picture>
-                              <img
-                                src="/assets/images/about/history/achievement/03.png"
-                                alt="Customer"
-                              />
-                              </picture>
-                            </div>
-                            <div className="lab-content">
-                              <h3>
-                                <span className="counter">50</span>+
-                              </h3>
-                              <h5>Volunteer</h5>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-3 col-md-3 col-6">
-                        <div className="lab-item">
-                          <div className="lab-inner text-center">
-                            <div className="lab-thumb mb-3">
-                             <picture>
-                             <img
-                                src="/assets/images/about/history/achievement/04.png"
-                                alt="Customer"
-                              />
-                             </picture>
-                            </div>
-                            <div className="lab-content">
-                              <h3>
-                                <span className="counter">40</span>k+
-                              </h3>
-                              <h5>Poultry</h5>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="history-navigation mt-3">
-                    <div className="history-button-prev">
-                      <i className="fas fa-arrow-left"></i>
-                    </div>
-                    <div className="history-button-next">
-                      <i className="fas fa-arrow-right"></i>
-                    </div>
-                  </div>
+            </div>
+
+            <div className="col-lg-6 col-12">
+              <div className="about-wrapper">
+                <div className="about-title">
+                  <h2>
+                    <span className="d-lg-block">Our Vision </span>
+                  </h2>
+                  <p>
+                  &quot;Our Vision is to change the way people perceive farming,
+                    one farm at a time.&quot; Change could be uncomfortable but it&apos;s
+                    necessary. The traditional methods being used in farming
+                    have to go away to pave the way for modern methods. Jobie
+                    Agro farms is just a beginning for all the other farms that
+                    will adapt to the innovative ways of farming.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* ./History */}
+      {/*  */}
+
+
       {/* Footer */}
       <Footer />
     </>
