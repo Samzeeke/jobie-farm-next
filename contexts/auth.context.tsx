@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect } from "react";
 import useFirebaseAuth from "../hooks/useFirebaseAuth";
 import auth, { User, UserCredential } from "firebase/auth";
+
 import { useRouter } from "next/router";
 
 interface AuthUserProviderProp {
