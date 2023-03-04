@@ -20,9 +20,11 @@ interface AuthUserProp {
     password: string
   ) => Promise<any>;
   updateUsername: (user: User, name: string) => Promise<void>;
+  signInWithGoogle: () => Promise<any>;
+  signInWithFacebook: () => Promise<any>;
 }
 
-const authUserContext = createContext<AuthUserProp>({
+const authUserContext = createContext<any>({
   authUser: null,
   loading: true,
   signOut: async () => {},
@@ -35,7 +37,18 @@ const authUserContext = createContext<AuthUserProp>({
     password: string
   ) => {},
   updateUsername: async (user: User, name: string) => {},
+  signInWithGoogle: async () => {},
+  signInWithFacebook: async () => {},
 });
+
+// authUser,
+// loading,
+// signInWithCustomEmailAndPassword,
+// createNewUserWithEmailAndPassword,
+// updateUsername,
+// signInWithGoogle,
+// signInWithFacebook,
+// signOut,
 
 export function AuthUserProvider({ children }: AuthUserProviderProp) {
   const auth = useFirebaseAuth();

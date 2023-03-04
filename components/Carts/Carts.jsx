@@ -14,7 +14,7 @@ const Carts = () => {
         <li>
           <div className="cart-option">
             <i className={`${classes.cart__icon} icofont-cart-alt`}></i>
-            <span className={classes.total__quantity}>{totalQuantity}</span>
+            <span className={classes.total__quantity}>{carts.length}</span>
             <div className={`${classes.cart} cart-content`}>
               {carts?.length > 0 &&
                 carts?.map((item) => <CartItem item={item} key={item.id} />)}

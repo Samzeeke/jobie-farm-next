@@ -1,0 +1,86 @@
+{
+  "items": {
+    "bootstrap": [
+      {
+        "id": 1,
+        "title": "Welcome to Jobie-Agro Farm",
+        "body": "",
+        "imageUrl": "https://images.unsplash.com/photo-1588597989061-b60ad0eefdbf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cG91bHRyeXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+      },
+      {
+        "id": 2,
+        "title": "Poultry Farming",
+        "body": "",
+        "imageUrl": "https://petkeen.com/wp-content/uploads/2021/12/chicken-farm-factory_TukkataMoji_Shutterstock.jpg",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+      },
+      {
+        "id": 3,
+        "title": "Egg Hatching",
+        "body": "",
+        "imageUrl": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+      },
+      {
+        "id": 4,
+        "title": "Foods and Culture",
+        "body": "",
+        "imageUrl": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+        "docs": "https://getbootstrap.com/docs/4.0/components/carousel/"
+      }
+    ]
+  },
+  "photos": [
+    {
+      "src": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "src": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "src": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "src": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+      "width": 1,
+      "height": 1
+    },
+    {
+      "src": "https://cdn.britannica.com/94/151894-050-F72A5317/Brown-eggs.jpg",
+      "width": 4,
+      "height": 3
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1541329444622-e85b1a8980df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMGZhcm18ZW58MHx8MHx8&w=1000&q=80",
+      "width": 1,
+      "height": 1
+    }
+  ]
+}

@@ -6,6 +6,9 @@ import {
   updateProfile,
   User,
   UserCredential,
+  GoogleAuthProvider, 
+  FacebookAuthProvider,
+  signInWithPopup
 } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 import { auth } from '../firebase'
@@ -49,6 +52,18 @@ export default function useFirebaseAuth() {
     return credential.user
   }
 
+  const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider()
+    const credential = await signInWithPopup(auth, provider)
+    return credential.user;
+  }
+
+  const signInWithFacebook = async () => {
+    const provider = new FacebookAuthProvider();
+    const credential = await signInWithPopup(auth, provider);
+    return credential.user;
+  }
+
   const updateUsername = (user: User, name: string): Promise<void> =>
     updateProfile(user, {
       displayName: name,
@@ -79,6 +94,8 @@ export default function useFirebaseAuth() {
     signInWithCustomEmailAndPassword,
     createNewUserWithEmailAndPassword,
     updateUsername,
+    signInWithGoogle,
+    signInWithFacebook,
     signOut,
   }
 }
