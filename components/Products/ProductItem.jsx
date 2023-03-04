@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { ProductsActions } from "../../store/Products/ProductsSlice";
 
 import classes from "../../styles/Cart.module.css";
-const ProductsItem = ({ id, title, image, price }) => {
+const ProductsItem = ({ id, title, image, price, type }) => {
   const dispatch = useDispatch();
   const addCartItem = async () => {
     dispatch(
@@ -13,6 +13,7 @@ const ProductsItem = ({ id, title, image, price }) => {
         image,
         price,
         amount: 1,
+        type
       })
     );
   };
@@ -35,7 +36,7 @@ const ProductsItem = ({ id, title, image, price }) => {
               <i className="far fa-star"></i>
               <i className="far fa-star"></i>
             </div>
-            <h6 className="price">${price}</h6>
+            <h6 className="price">&#8358;{price}</h6>
             <div
               className={`${classes.add__btn} cart-option`}
               onClick={addCartItem}

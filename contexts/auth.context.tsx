@@ -10,7 +10,7 @@ interface AuthUserProviderProp {
 interface AuthUserProp {
   loading: boolean;
   authUser: auth.User | null;
-  signOut: () => Promise<void>;
+  signOut: () => Promise<any>;
   signInWithCustomEmailAndPassword: (
     email: string,
     password: string

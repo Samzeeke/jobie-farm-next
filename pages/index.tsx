@@ -25,13 +25,22 @@ export default function Home() {
       const colRef = collection(db, 'products')
       const snapshots = await getDocs(colRef)
       const docs = snapshots.docs.map((doc) => {
-        const data = doc.data()
-        data.id = doc.id
-        return data
-      })
-      dispatch(ProductsActions.addProducts({ products: docs }))
-    })()
-  }, [dispatch])
+        const data = doc.data();
+        data.id = doc.id;
+        return data;
+      });
+      dispatch(ProductsActions.addProducts({ products: docs }));
+
+      const usersRef = collection(db, "users");
+      const usersSnapshots = await getDocs(usersRef);
+      const usersDocs = usersSnapshots.docs.map((doc) => {
+        const data = doc.data();
+        data.id = doc.id;
+        return data;
+      });
+      dispatch(ProductsActions.addUsers({ users: usersDocs }));
+    })();
+  }, [dispatch]);
   return (
     <div>
       <main>
