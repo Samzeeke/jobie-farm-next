@@ -46,8 +46,9 @@
 
 @media only screen and (max-width: 1000px) {
   .contact__form {
-    width: 80%;
+    width: 95%;
     padding: 2rem;
+    margin: 2rem auto 2rem;
   }
   .h1 {
     font-size: 1.8rem;
@@ -60,6 +61,7 @@
   .contact__form {
     width: 100%;
     padding: 2rem;
+    margin: 1.5rem auto;
   }
 
   .h1 {

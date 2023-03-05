@@ -5,7 +5,7 @@ const CartItem = ({ index, price, image, quantity, totalPrice }) => {
     <tr className={classes.tr}>
       <td className={classes.td}>{`${index}`.padStart(2, 0)}</td>{" "}
       <td className={classes.image}>
-        <Image src={image} alt="cart" width={55} height={60} />
+        <Image src={image} alt="cart" width={40} height={40} />
       </td>
       <td className={classes.td}>{quantity}</td>
       <td className={classes.td}>&#8358;{price}</td>
