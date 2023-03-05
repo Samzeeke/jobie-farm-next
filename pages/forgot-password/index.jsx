@@ -7,7 +7,6 @@ const ForgotPassword = () => {
   const { requestForgotPassword } = useFirebaseAuth();
   const getFormDetails = async ({email}) => {
     try {
-      console.log('email', email)
       await requestForgotPassword(email)
       window.alert("Please check your email to reset your passsword")
     } catch (error) {

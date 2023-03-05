@@ -55,7 +55,7 @@ export default function useFirebaseAuth() {
 
   const requestForgotPassword = async (email: string) => 
     await sendPasswordResetEmail(auth, email, {
-      url: 'http://localhost:3000/'
+      url: 'http://localhost:3000/?reset-password=ok'
     })
   
   
