@@ -1,27 +1,104 @@
-.container {
-  max-width: 800px;
+.head {
+  padding: 2rem;
+  width: 70%;
   margin: 0 auto;
 }
-
-.profile {
+.container {
+  padding: 2rem;
+  border: 0.1rem solid #f0bd7c;
+  border-radius: 1rem;
+  width: 70%;
+  margin: 1rem auto 3rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.left {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 3rem;
+  border: 0.1rem solid #4b4a494a;
+  padding-top: 2rem;
+}
+.icon__box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.icon {
+  height: 6rem;
+  width: 6rem;
+  fill: rgba(0, 0, 0, 0.22);
+}
 .profile__details {
-  text-align: left;
-}
-
-.h1 {
-  font-size: 36px;
-  margin: 0;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 .p {
-  font-size: 24px;
-  margin: 0;
-  margin-bottom: 10px;
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  letter-spacing: 0.1rem;
+}
+.span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+.right {
+  flex-basis: 60%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .head {
+    width: 95%;
+    margin: 5rem auto 0;
+  }
+  .container {
+    padding: 1rem 1.5rem;
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .head {
+    width: 100%;
+  }
+  .container {
+    margin: 1rem auto 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    width: 80%;
+    padding: 2rem;
+  }
+  .right {
+    width: 80%;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .head {
+    width: 100%;
+  }
+  .container {
+    margin: 1rem auto 3rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .left {
+    width: 100%;
+    padding: 2rem;
+  }
+  .right {
+    width: 100%;
+    padding: 2rem;
+  }
 }

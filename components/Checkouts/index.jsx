@@ -16,11 +16,9 @@ const Checkouts = () => {
   const [checkoutFormData, setCheckoutFormData] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  const { users, carts } = useSelector((state) => state.products);
-  console.log(users, carts);
+  const { users, carts, totalAmount } = useSelector((state) => state.products);
 
-  const { auth } = useAuth();
-  const { totalAmount } = useSelector((state) => state.products);
+  const { authUser } = useAuth();
   const config = (email, amount) => ({
     reference: new Date().getTime().toString(),
     email,
@@ -31,7 +29,6 @@ const Checkouts = () => {
   const initializePayment = usePaystackPayment(
     config(checkoutFormData?.email ?? "", parseInt(totalAmount) * 100)
   );
-  console.log("auth", auth);
   const router = useRouter();
 
   useEffect(() => {
@@ -54,34 +51,27 @@ const Checkouts = () => {
         paymentType: "Paystack",
       });
     };
-    const createOrder = async (cartItem) => {
-      const signedInUserEmail = auth?.email;
-      const user = users.filter((user) => user.email === signedInUserEmail);
+    const createOrder = async () => {
+      const signedInUserEmail = authUser?.email;
+      const user = users.find((user) => user.email === signedInUserEmail);
 
       const docRef = collection(db, "orders");
       await addDoc(docRef, {
-        title: cartItem.title,
-        type: cartItem.type,
-        price: cartItem.price,
-        quantity: cartItem.quantity,
-        totalPrice: cartItem.totalPrice,
+        totalQuantity: carts.length,
+        carts: carts,
+        grandTotal: totalAmount,
         paymentStatus: "Pending",
         orderStatus: "Pending",
-        customerName: user.lastName
-          ? `${user.lastName} ${user.firstName}`
-          : "Ojerinde Joel",
-        customerEmail: user.email || "ojerindejoel@gmail.com",
-        customerPhone: user.phone || "+23409011818991 ",
+        customerName: user.lastName ? `${user.lastName} ${user.firstName}` : "",
+        customerEmail: user.email || "",
+        customerPhone: user.phone || "",
       });
     };
     if (success) {
-      console.log("success", success);
       addToDataBase();
-      carts.forEach((cartItem) => {
-        createOrder(cartItem);
-      });
+      createOrder();
     }
-  }, [success, checkoutFormData, totalAmount, carts, users, auth]);
+  }, [success, checkoutFormData, totalAmount, carts, users, authUser]);
 
   const onSuccess = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.

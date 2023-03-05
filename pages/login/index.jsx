@@ -13,13 +13,14 @@ const Login = () => {
   const router = useRouter();
 
   const signInHandler = async (formData) => {
-    console.log(formData);
+    // console.log(formData);
     setPending(true);
     try {
-      await signInWithCustomEmailAndPassword({
+      const response = await signInWithCustomEmailAndPassword({
         email: formData.email,
         password: formData.password,
       });
+      console.log(response, "signed in successfully");
       router.push("/");
     } catch (error) {
       console.log("error occured", error.toString());

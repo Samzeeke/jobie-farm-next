@@ -10,6 +10,7 @@ const Form = ({ onBank, onFlutter, onPaystack }) => {
     lastName: "",
     address: "",
     phone: "",
+    state: "",
     zip: "",
     country: "",
   });

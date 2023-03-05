@@ -37,7 +37,7 @@ const MobileSelectedItem = ({
         <Image src={image} width={80} height={20} alt={title} />
         <div className={classes.title__box}>
           <p className={classes.title}>{title}</p>
-          <div className={classes.price__box}>
+          <p className={classes.price__box}>
             <p>{price}</p>
             <p className={classes.actions}>
               <span>
@@ -62,7 +62,7 @@ const MobileSelectedItem = ({
                 </span>
               </div>
             </p>
-          </div>
+          </p>
         </div>
       </div>
       <p className={classes.total__price}>
