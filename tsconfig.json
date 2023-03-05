@@ -27,7 +27,14 @@
     "pages/index.tsx",
     "hooks/useFirebaseAuth.jsx",
     "components/Button.jsx",
-    "components/Button.jsx"
+    "components/Button.jsx",
+    "components/User/UpdateProfileForm.jsx",
+    "components/User/UpdateProfileForm.jsx",
+    "components/User/UpdateProfile.tsx",
+    "components/User/UpdateProfile.tsx",
+    "components/User/ChangePasswordForm.jsx",
+    "pages/user/index.tsx",
+    "pages/user/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

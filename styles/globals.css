@@ -1,4 +1,3 @@
-
 @import url("/assets/css/animate.css");
 @import url("/assets/css/bootstrap.min.css");
 @import url("/assets/css/all.min.css");
@@ -36,9 +35,14 @@ a {
 * {
   box-sizing: border-box;
 }
-
+.activeNav {
+  background-color: rgb(181, 179, 179);
+  color: rgba(255, 255, 255, 0.881) !important;
+}
 @media (prefers-color-scheme: dark) {
-  html {}
+  html {
+  }
 
-  body {}
+  body {
+  }
 }
