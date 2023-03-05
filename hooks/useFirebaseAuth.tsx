@@ -8,7 +8,8 @@ import {
   UserCredential,
   GoogleAuthProvider, 
   FacebookAuthProvider,
-  signInWithPopup
+  signInWithPopup,
+  sendPasswordResetEmail,
 } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 import { auth } from '../firebase'
@@ -51,6 +52,13 @@ export default function useFirebaseAuth() {
     await sendEmailVerification(credential.user)
     return credential.user
   }
+
+  const requestForgotPassword = async (email: string) => 
+    await sendPasswordResetEmail(auth, email, {
+      url: 'http://localhost:3000/?reset-password=ok'
+    })
+  
+  
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider()
@@ -96,6 +104,7 @@ export default function useFirebaseAuth() {
     updateUsername,
     signInWithGoogle,
     signInWithFacebook,
+    requestForgotPassword,
     signOut,
   }
 }

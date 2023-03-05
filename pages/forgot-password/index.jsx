@@ -1,9 +1,17 @@
 import Link from "next/link";
 import Form from "./Form";
 import classes from "./ForgotForm.module.css";
+import useFirebaseAuth from "./../../hooks/useFirebaseAuth";
+
 const ForgotPassword = () => {
-  const getFormDetails = (formData) => {
-    console.log(formData);
+  const { requestForgotPassword } = useFirebaseAuth();
+  const getFormDetails = async ({email}) => {
+    try {
+      await requestForgotPassword(email)
+      window.alert("Please check your email to reset your passsword")
+    } catch (error) {
+      console.log("error for forgot password", error)
+    }
   };
   return (
     <section className={classes.forgot__password}>

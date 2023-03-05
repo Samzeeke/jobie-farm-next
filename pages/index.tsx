@@ -20,6 +20,14 @@ import { ProductsActions } from '../store/Products/ProductsSlice'
 export default function Home() {
   const dispatch = useDispatch()
   const router = useRouter()
+
+  useEffect(() => {
+    if(router.query && router.query['reset-password'] === 'ok') {
+      console.log("password has been reset");
+      window.alert("password has been successfully updated!");
+    }
+
+  }, [router.query])
   useEffect(() => {
     ;(async () => {
       const colRef = collection(db, 'products')
