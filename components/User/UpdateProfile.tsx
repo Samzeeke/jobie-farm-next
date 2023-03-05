@@ -19,6 +19,7 @@ const UpdateProfile: React.FC<Props> = ({ email }) => {
   const dispatch = useDispatch();
   const user = users?.find((user: any) => user.email === email);
   const userId = user?.id;
+  console.log(user);
   const getFormDatas = async (formData: FormObject) => {
     const ref = doc(db, "users", userId);
     await updateDoc(ref, {
@@ -45,6 +46,14 @@ const UpdateProfile: React.FC<Props> = ({ email }) => {
         console.error("Error updating document: ", error);
       });
   };
-  return <UpdateProfileForm onSubmit={getFormDatas} email={email} />;
+  return (
+    <UpdateProfileForm
+      onSubmit={getFormDatas}
+      email={email}
+      firstName={user?.firstName}
+      lastName={user?.lastName}
+      phone={user?.phone}
+    />
+  );
 };
 export default UpdateProfile;

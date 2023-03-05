@@ -4,12 +4,12 @@ import Input from "./UserInput";
 
 import classes from "./UpdateProfile.module.css";
 
-const Form = ({ onSubmit, email }) => {
+const Form = ({ onSubmit, email, firstName, lastName, phone }) => {
   const [form, setForm] = useState({
     email: email,
-    firstName: "",
-    lastName: "",
-    phone: "",
+    firstName: firstName,
+    lastName: lastName,
+    phone: phone,
   });
   const firstNameOnChangeHandler = (e) => {
     setForm((prev) => {
@@ -41,12 +41,6 @@ const Form = ({ onSubmit, email }) => {
       firstName: form.firstName,
       lastName: form.lastName,
       phone: form.phone,
-    });
-    setForm({
-      email: email,
-      firstName: "",
-      lastName: "",
-      phone: "",
     });
   };
 
