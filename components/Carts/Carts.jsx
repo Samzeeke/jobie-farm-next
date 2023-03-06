@@ -25,7 +25,7 @@ const Carts = () => {
                 <div className="cart-bottom">
                   <div className="cart-subtotal">
                     <p>
-                      Total: <b className="float-right">${totalAmount}</b>
+                      Total: <b className="float-right">&#8358;{totalAmount}</b>
                     </p>
                   </div>
                   <div className={`cart-action ${classes.cart__button}`}>

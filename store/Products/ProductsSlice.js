@@ -28,15 +28,19 @@ const ProductsSlice = createSlice({
       const existingItem = state.carts.find((item) => item.id === newItem.id);
       const updatedAmount = +state.totalAmount + +newItem.price;
       state.totalAmount = updatedAmount.toFixed(2);
+      const newItemPrice = +newItem.price;
       if (existingItem) {
         existingItem.quantity++;
-        existingItem.totalPrice += newItem.price;
+
+        existingItem.totalPrice = Math.round(
+          existingItem.totalPrice + Number(parseFloat(newItemPrice).toFixed(2))
+        );
       } else {
         state.carts.push({
           id: newItem.id,
           price: newItem.price,
           quantity: 1,
-          totalPrice: newItem.price,
+          totalPrice: Number(parseFloat(newItemPrice).toFixed(2)),
           title: newItem.title,
           image: newItem.image,
           type: newItem.type,

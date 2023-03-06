@@ -15,7 +15,7 @@ const MyCarts = () => {
         <h4 className={classes.subheading}>Here are all your added items</h4>
         <SelectedProducts />
         <div className={classes.total}>
-          Total Price: <span>${totalAmount}</span>
+          Total Price: <span>&#8358;{totalAmount}</span>
         </div>
         <div className={classes.btn__box}>
           {" "}
