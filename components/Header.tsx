@@ -42,14 +42,14 @@ const Header: React.FC<any> = () => {
       <div className="mobile-menu transparent-header">
         <nav className="mobile-header">
           <div className="header-logo">
-            <a href="index.html">
+            <Link href="/">
               <Image
                 src="/assets/jobie-agro-logo.png"
                 alt="logo"
                 width={250}
                 height={100}
               />
-            </a>
+            </Link>
           </div>
           <div className="header-bar">
             <span></span>
@@ -190,10 +190,14 @@ const Header: React.FC<any> = () => {
                     </div>
                     <ul className="lab-ul">
                       <li className="active">
-                        <Link href="/" className="text-decoration-none">Home</Link>
+                        <Link href="/" className="text-decoration-none">
+                          Home
+                        </Link>
                       </li>
                       <li>
-                        <Link href="/about" className="text-decoration-none">About</Link>
+                        <Link href="/about" className="text-decoration-none">
+                          About
+                        </Link>
                       </li>
 
                       <li>
@@ -203,16 +207,22 @@ const Header: React.FC<any> = () => {
                       </li>
 
                       <li>
-                        <Link href="/contact" className="text-decoration-none">Contact</Link>
+                        <Link href="/contact" className="text-decoration-none">
+                          Contact
+                        </Link>
                       </li>
                     </ul>
                     {!authUser && (
                       <ul className="lab-ul ml-auto">
                         <li>
-                          <Link href="/signup" className="text-decoration-none">Sign Up</Link>
+                          <Link href="/signup" className="text-decoration-none">
+                            Sign Up
+                          </Link>
                         </li>
                         <li>
-                          <Link href="/login" className="text-decoration-none">Login</Link>
+                          <Link href="/login" className="text-decoration-none">
+                            Login
+                          </Link>
                         </li>
                       </ul>
                     )}
@@ -224,7 +234,9 @@ const Header: React.FC<any> = () => {
                           </Link>
                         </li>
                         <li>
-                          <a className="text-decoration-none" onClick={logout}>Logout</a>
+                          <a className="text-decoration-none" onClick={logout}>
+                            Logout
+                          </a>
                         </li>
                       </ul>
                     )}

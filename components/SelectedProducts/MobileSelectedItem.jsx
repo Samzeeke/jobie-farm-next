@@ -46,7 +46,7 @@ const MobileSelectedItem = ({
                   onClick={deleteCartItems}
                 ></i>
               </span>
-              <div className={classes.quantity}>
+              <p className={classes.quantity}>
                 <span>
                   <i
                     className={`icofont-minus ${classes.add}`}
@@ -60,7 +60,7 @@ const MobileSelectedItem = ({
                     onClick={increaseCartItem}
                   ></i>
                 </span>
-              </div>
+              </p>
             </p>
           </p>
         </div>
