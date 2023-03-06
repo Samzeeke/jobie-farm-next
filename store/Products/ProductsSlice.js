@@ -31,11 +31,7 @@ const ProductsSlice = createSlice({
       const newItemPrice = +newItem.price;
       if (existingItem) {
         existingItem.quantity++;
-        console.log(
-          Number(parseFloat(newItemPrice).toFixed(2)),
-          existingItem.totalPrice + Number(parseFloat(newItemPrice).toFixed(2)),
-          typeof existingItem.totalPrice
-        );
+
         existingItem.totalPrice = Math.round(
           existingItem.totalPrice + Number(parseFloat(newItemPrice).toFixed(2))
         );
