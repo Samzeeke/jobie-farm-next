@@ -12,43 +12,41 @@ import BootstrapCarousel from '../components/carousel'
 import HomeAbout from '../components/Home/HomeAbout'
 import Feature from '../components/Home/Feature'
 import HomeProducts from '../components/Home/HomeProducts'
-import Services from '../components/Home/Services';
-import FarmGallery from '../components/Home/FarmGallery';
+import Services from '../components/Home/Services'
+import FarmGallery from '../components/Home/FarmGallery'
 import { ProductsActions } from '../store/Products/ProductsSlice'
-
 
 export default function Home() {
   const dispatch = useDispatch()
   const router = useRouter()
 
   useEffect(() => {
-    if(router.query && router.query['reset-password'] === 'ok') {
-      console.log("password has been reset");
-      window.alert("password has been successfully updated!");
+    if (router.query && router.query['reset-password'] === 'ok') {
+      console.log('password has been reset')
+      window.alert('password has been successfully updated!')
     }
-
   }, [router.query])
   useEffect(() => {
     ;(async () => {
       const colRef = collection(db, 'products')
       const snapshots = await getDocs(colRef)
       const docs = snapshots.docs.map((doc) => {
-        const data = doc.data();
-        data.id = doc.id;
-        return data;
-      });
-      dispatch(ProductsActions.addProducts({ products: docs }));
+        const data = doc.data()
+        data.id = doc.id
+        return data
+      })
+      dispatch(ProductsActions.addProducts({ products: docs }))
 
-      const usersRef = collection(db, "users");
-      const usersSnapshots = await getDocs(usersRef);
+      const usersRef = collection(db, 'users')
+      const usersSnapshots = await getDocs(usersRef)
       const usersDocs = usersSnapshots.docs.map((doc) => {
-        const data = doc.data();
-        data.id = doc.id;
-        return data;
-      });
-      dispatch(ProductsActions.addUsers({ users: usersDocs }));
-    })();
-  }, [dispatch]);
+        const data = doc.data()
+        data.id = doc.id
+        return data
+      })
+      dispatch(ProductsActions.addUsers({ users: usersDocs }))
+    })()
+  }, [dispatch])
   return (
     <div>
       <main>
@@ -71,10 +69,10 @@ export default function Home() {
         <Services />
         {/* poultry farm service */}
         {/* poultry farm gallery */}
-        <FarmGallery />
+        {/* <FarmGallery /> */}
         {/* poultry farm gallery */}
         {/* Testimonial */}
-      {/* Testim */}
+        {/* Testim */}
         {/* ./Testimonial */}
         {/* Video Section */}
         <div className="video-section padding-tb bg-ash">
@@ -101,7 +99,7 @@ export default function Home() {
         </div>
         {/* Video Section */}
         {/* Sponsor */}
-       
+
         {/* ./Sponsor */}
         {/* Footer */}
         <Footer />

@@ -1,63 +1,63 @@
-import { useState } from "react";
-import Button from "../../components/Button";
-import Input from "./Input";
+import { useState } from 'react'
+import Button from '../../components/Button'
+import Input from './Input'
 
-import classes from "./CheckoutForm.module.css";
+import classes from './CheckoutForm.module.css'
 const Form = ({ onBank, onFlutter, onPaystack }) => {
   const [form, setForm] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    address: "",
-    phone: "",
-    state: "",
-    zip: "",
-    country: "",
-  });
+    email: '',
+    firstName: '',
+    lastName: '',
+    address: '',
+    phone: '',
+    state: '',
+    zip: '',
+    country: '',
+  })
   const firstNameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, firstName: e.target.value };
-    });
-  };
+      return { ...prev, firstName: e.target.value }
+    })
+  }
   const lastNameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, lastName: e.target.value };
-    });
-  };
+      return { ...prev, lastName: e.target.value }
+    })
+  }
   const addressOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, address: e.target.value };
-    });
-  };
+      return { ...prev, address: e.target.value }
+    })
+  }
 
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, email: e.target.value };
-    });
-  };
+      return { ...prev, email: e.target.value }
+    })
+  }
   const countryOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, country: e.target.value };
-    });
-  };
+      return { ...prev, country: e.target.value }
+    })
+  }
   const zipOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, zip: e.target.value };
-    });
-  };
+      return { ...prev, zip: e.target.value }
+    })
+  }
   const phoneOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, phone: e.target.value };
-    });
-  };
+      return { ...prev, phone: e.target.value }
+    })
+  }
   const stateOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, state: e.target.value };
-    });
-  };
+      return { ...prev, state: e.target.value }
+    })
+  }
 
   const payStackHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     onPaystack({
       email: form.email,
       firstname: form.firstName,
@@ -67,24 +67,24 @@ const Form = ({ onBank, onFlutter, onPaystack }) => {
       country: form.country,
       state: form.state,
       phone: form.phone,
-    });
-  };
+    })
+  }
 
   const bankHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    onBank();
-  };
+    onBank()
+  }
   const flutterHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    console.log("flutter");
-    onFlutter();
-  };
+    console.log('flutter')
+    onFlutter()
+  }
 
   return (
     <form className={classes.contact__form} noValidate>
-      <h1 className={classes.h1}>Shopping Details</h1>
+      <h1 className={classes.h1}>Delivery Details</h1>
       <div className={classes.row}>
         <div className={classes.row__left}>
           <Input
@@ -192,10 +192,10 @@ const Form = ({ onBank, onFlutter, onPaystack }) => {
           className={classes.button}
           onClick={flutterHandler}
         >
-          Pay with Flutter
+          Pay with Flutterwave
         </Button>
       </div>
     </form>
-  );
-};
-export default Form;
+  )
+}
+export default Form

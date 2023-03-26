@@ -54,7 +54,15 @@
   transform: translateY(0.2rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
-@media (max-width: 650px) {
+
+@media only screen and (min-width: 741px) {
+  .shop {
+    margin: 8rem 1rem 2rem;
+    text-align: center;
+  }
+
+}
+@media (max-width: 740px) {
   .shop {
     margin: 8rem 1rem 2rem;
     text-align: center;

@@ -1,27 +1,27 @@
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
-import { useAuth } from "../contexts/auth.context";
-import Carts from "../components/Carts/Carts";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import { useAuth } from '../contexts/auth.context'
+import Carts from '../components/Carts/Carts'
 
 const Header: React.FC<any> = () => {
-  const { signOut, loading, authUser } = useAuth();
-  const router = useRouter();
+  const { signOut, loading, authUser } = useAuth()
+  const router = useRouter()
 
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignUp, setShowSignUp] = useState(false);
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false)
 
-  const showLoginDialog = () => setShowLogin(true);
-  const showSignUpDialog = () => setShowSignUp(true);
+  const showLoginDialog = () => setShowLogin(true)
+  const showSignUpDialog = () => setShowSignUp(true)
 
-  const handleCloseLoginDialog = () => setShowLogin(false);
-  const handleCloseSignupDialog = () => setShowSignUp(false);
+  const handleCloseLoginDialog = () => setShowLogin(false)
+  const handleCloseSignupDialog = () => setShowSignUp(false)
 
   const logout = async () => {
-    await signOut();
-    router.push("/");
-  };
+    await signOut()
+    router.push('/')
+  }
 
   return (
     <>
@@ -70,6 +70,20 @@ const Header: React.FC<any> = () => {
                 <li>
                   <Link href="/contact">Contact</Link>
                 </li>
+                {!authUser && (
+                  <li>
+                    <Link href="/signup" className="text-decoration-none">
+                      Sign Up
+                    </Link>
+                  </li>
+                )}
+                {!authUser && (
+                  <li>
+                    <Link href="/login" className="text-decoration-none">
+                      Login
+                    </Link>
+                  </li>
+                )}
                 {authUser && (
                   <li>
                     <Link href="/user">My Profile</Link>
@@ -109,7 +123,7 @@ const Header: React.FC<any> = () => {
                       height={100}
                       src="/assets/jobie-agro-logo.png"
                       alt="logo"
-                      style={{ width: "250px" }}
+                      style={{ width: '250px' }}
                     />
                   </Link>
                 </div>
@@ -184,7 +198,7 @@ const Header: React.FC<any> = () => {
                           height={250}
                           src="/assets/jobie-agro-logo.png"
                           alt="logo"
-                          style={{ width: "250px" }}
+                          style={{ width: '250px' }}
                         />
                       </Link>
                     </div>
@@ -249,7 +263,7 @@ const Header: React.FC<any> = () => {
         </div>
       </header>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
